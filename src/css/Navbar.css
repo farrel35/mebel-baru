@@ -1,0 +1,11 @@
+/* Navbar styles */
+.navbar {
+  background-color: #294b29;
+}
+.navbar-brand {
+  font-size: 1.5rem;
+}
+
+.nav-link {
+  color: #fff !important;
+}
