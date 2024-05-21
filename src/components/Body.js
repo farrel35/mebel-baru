@@ -16,19 +16,32 @@ const Body = () => {
     <div>
       <section id="about-us" className="container">
         <h1> Tentang Kami</h1>
-        <div className="row featurette">
+        <div className="row featurette p-5">
           <div className="col-md-7">
             <h2 className="featurette-heading lh-1">Mebelin Furniture</h2>
             <p className="lead">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, ut. Itaque quod vel incidunt, porro quo voluptate hic, iusto voluptates fugit quis maiores adipisci dolorum quos maxime dolorem sed nemo commodi modi in animi
-              qui deserunt. Nemo laboriosam molestias temporibus placeat harum suscipit ipsum dolorum, eum libero quia facilis quae architecto voluptatibus reprehenderit officia reiciendis. Nemo enim omnis placeat recusandae qui magni
-              commodi, rem debitis hic totam tempora soluta, quis eos vero voluptatem, velit tenetur consequatur? Tempora accusantium nesciunt id asperiores fuga distinctio aut! Laborum culpa voluptatum alias aliquam voluptates consequatur
-              recusandae officiis dolore accusantium in? Nostrum ullam eaque ex.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum,
+              ut. Itaque quod vel incidunt, porro quo voluptate hic, iusto
+              voluptates fugit quis maiores adipisci dolorum quos maxime dolorem
+              sed nemo commodi modi in animi qui deserunt. Nemo laboriosam
+              molestias temporibus placeat harum suscipit ipsum dolorum, eum
+              libero quia facilis quae architecto voluptatibus reprehenderit
+              officia reiciendis. Nemo enim omnis placeat recusandae qui magni
+              commodi, rem debitis hic totam tempora soluta, quis eos vero
+              voluptatem, velit tenetur consequatur? Tempora accusantium
+              nesciunt id asperiores fuga distinctio aut! Laborum culpa
+              voluptatum alias aliquam voluptates consequatur recusandae
+              officiis dolore accusantium in? Nostrum ullam eaque ex.
               <br />
             </p>
           </div>
           <div className="col-md-5">
-            <img src="https://m.media-amazon.com/images/I/81UwP++piNL._AC_SL1500_.jpg" alt="about-us" width="450" height="450" />
+            <img
+              src="https://m.media-amazon.com/images/I/81UwP++piNL._AC_SL1500_.jpg"
+              alt="about-us"
+              width="450"
+              height="450"
+            />
           </div>
         </div>
       </section>
@@ -39,37 +52,61 @@ const Body = () => {
         <div className="row">
           <div className="col-md-3">
             <div className="card">
-              <img src="./images/quality.jpg" className="card-img-top" alt="Quality" />
+              <img
+                src="./images/quality.jpg"
+                className="card-img-top"
+                alt="Quality"
+              />
               <div className="card-body">
                 <h5 className="card-title">Quality</h5>
-                <p className="card-text">We provide high-quality products that are built to last.</p>
+                <p className="card-text">
+                  We provide high-quality products that are built to last.
+                </p>
               </div>
             </div>
           </div>
           <div className="col-md-3">
             <div className="card">
-              <img src="./images/service.jpg" className="card-img-top" alt="Service" />
+              <img
+                src="./images/service.jpg"
+                className="card-img-top"
+                alt="Service"
+              />
               <div className="card-body">
                 <h5 className="card-title">Service</h5>
-                <p className="card-text">Our team is dedicated to providing excellent customer service.</p>
+                <p className="card-text">
+                  Our team is dedicated to providing excellent customer service.
+                </p>
               </div>
             </div>
           </div>
           <div className="col-md-3">
             <div className="card">
-              <img src="./images/variety.jpg" className="card-img-top" alt="Variety" />
+              <img
+                src="./images/variety.jpg"
+                className="card-img-top"
+                alt="Variety"
+              />
               <div className="card-body">
                 <h5 className="card-title">Variety</h5>
-                <p className="card-text">Choose from a wide range of options to suit your needs.</p>
+                <p className="card-text">
+                  Choose from a wide range of options to suit your needs.
+                </p>
               </div>
             </div>
           </div>
           <div className="col-md-3">
             <div className="card">
-              <img src="./images/affordability.jpg" className="card-img-top" alt="Affordability" />
+              <img
+                src="./images/affordability.jpg"
+                className="card-img-top"
+                alt="Affordability"
+              />
               <div className="card-body">
                 <h5 className="card-title">Affordability</h5>
-                <p className="card-text">Get great products at affordable prices.</p>
+                <p className="card-text">
+                  Get great products at affordable prices.
+                </p>
               </div>
             </div>
           </div>
@@ -86,10 +123,16 @@ const Body = () => {
           {Array.from({ length: 12 }).map((_, index) => (
             <div className="col-md-3" key={index}>
               <div className="card">
-                <img src={`./images/product${index + 1}.jpg`} className="card-img-top" alt={`Product ${index + 1}`} />
+                <img
+                  src={`./images/product${index + 1}.jpg`}
+                  className="card-img-top"
+                  alt={`Product ${index + 1}`}
+                />
                 <div className="card-body">
                   <h5 className="card-title">Product {index + 1}</h5>
-                  <p className="card-text">Description of product {index + 1}.</p>
+                  <p className="card-text">
+                    Description of product {index + 1}.
+                  </p>
                 </div>
               </div>
             </div>
