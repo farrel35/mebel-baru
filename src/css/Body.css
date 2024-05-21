@@ -4,7 +4,7 @@
   background-attachment: fixed;
   background-size: cover;
   width: 100%;
-  padding-top: 100px;
+  padding-top: 75px;
 }
 h1 {
   text-align: center;
@@ -18,7 +18,7 @@ h1 {
 .featurette h2 {
   font-size: 2rem;
   margin-bottom: 20px;
-  margin-left: 20px;
+  margin-left: 10px;
 }
 
 .featurette p {
@@ -85,7 +85,7 @@ h1 {
 
 @media (max-width: 768px) {
   #sale {
-    height: 50vh;
+    height: 40vh;
     padding: 10px;
     background-attachment: scroll;
   }
@@ -93,7 +93,7 @@ h1 {
 
 @media (max-width: 480px) {
   #sale {
-    height: 30vh;
+    height: 25vh;
     background-attachment: scroll;
   }
 }
