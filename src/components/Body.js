@@ -113,6 +113,32 @@ const Body = () => {
         </div>
       </section>
 
+      {/* Bagian Kategori */}
+      <section id="category" className="container">
+        <h1>
+          <hr></hr>Kategori
+        </h1>
+        <div className="row">
+          {/* Loop untuk membuat list kategori */}
+          {Array.from({ length: 8 }).map((_, index) => (
+            <div className="col-md-3" key={index}>
+              <div className="card">
+                <img
+                  src={`./images/category${index + 1}.jpg`}
+                  className="card-img-top"
+                  alt={`Category ${index + 1}`}
+                />
+                <div className="card-body">
+                  <h5 className="card-title">Category {index + 1}</h5>
+                  <p className="card-text">
+                    Description of category {index + 1}.
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
       {/* Bagian Our Products */}
       <section id="our-products" className="container">
         <h1>

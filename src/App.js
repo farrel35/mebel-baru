@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar";
 import Carousel from "./components/Carousel";
 import Body from "./components/Body";
 import Footer from "./components/Footer";
+import WhatsAppWidget from "./components/WhatsAppWidget";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
       <Navbar />
       <Carousel />
       <Body />
+      <WhatsAppWidget/>
       <Footer />
     </div>
   );
