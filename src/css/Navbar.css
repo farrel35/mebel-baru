@@ -1,6 +1,8 @@
 /* Navbar styles */
-.navbar {
+.navbar,
+.offcanvas {
   background-color: #294b29;
+  color: white;
 }
 .navbar-brand {
   font-size: 1.5rem;

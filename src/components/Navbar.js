@@ -19,14 +19,14 @@ const Navbar = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div
-          className="offcanvas offcanvas-end text-bg-dark"
+          className="offcanvas offcanvas-end"
           tabIndex="-1"
           id="offcanvasNavbar2"
           aria-labelledby="offcanvasNavbar2Label"
         >
           <div className="offcanvas-header">
             <h5 className="offcanvas-title" id="offcanvasNavbar2Label">
-              Offcanvas
+              Mebel
             </h5>
             <button
               type="button"
@@ -51,37 +51,6 @@ const Navbar = () => {
                 <a className="nav-link" href="#our-products">
                   Produk
                 </a>
-              </li>
-              <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Dropdown
-                </a>
-                <ul className="dropdown-menu">
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Action
-                    </a>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Another action
-                    </a>
-                  </li>
-                  <li>
-                    <hr className="dropdown-divider" />
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Something else here
-                    </a>
-                  </li>
-                </ul>
               </li>
             </ul>
             <form className="d-flex mt-3 mt-lg-0" role="search">
