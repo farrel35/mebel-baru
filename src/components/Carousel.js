@@ -52,7 +52,7 @@ const Carousel = () => {
         data-bs-target="#carouselExampleIndicators"
         data-bs-slide="prev"
       >
-        <FontAwesomeIcon icon={faArrowLeft} />
+        <FontAwesomeIcon icon={faArrowLeft} size="2x" />
 
         <span className="visually-hidden">Previous</span>
       </button>
@@ -62,7 +62,7 @@ const Carousel = () => {
         data-bs-target="#carouselExampleIndicators"
         data-bs-slide="next"
       >
-        <FontAwesomeIcon icon={faArrowRight} />
+        <FontAwesomeIcon icon={faArrowRight} size="2x" />
 
         <span className="visually-hidden">Next</span>
       </button>
