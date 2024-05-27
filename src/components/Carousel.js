@@ -3,7 +3,9 @@ import "../css/Carousel.css";
 import image1 from "../images/bg-2.png";
 import image2 from "../images/bg-sofaijo.png";
 import image3 from "../images/bg-2.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 const Carousel = () => {
   return (
     <div
@@ -50,7 +52,8 @@ const Carousel = () => {
         data-bs-target="#carouselExampleIndicators"
         data-bs-slide="prev"
       >
-        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+        <FontAwesomeIcon icon={faArrowLeft} />
+
         <span className="visually-hidden">Previous</span>
       </button>
       <button
@@ -59,7 +62,8 @@ const Carousel = () => {
         data-bs-target="#carouselExampleIndicators"
         data-bs-slide="next"
       >
-        <span className="carousel-control-next-icon" aria-hidden="true"></span>
+        <FontAwesomeIcon icon={faArrowRight} />
+
         <span className="visually-hidden">Next</span>
       </button>
     </div>
