@@ -11,6 +11,8 @@ import WhatsAppWidget from "./components/WhatsAppWidget";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Cart from "./components/Cart"; 
+import ProductDetail from "./components/ProductDetail";
+import ProductsByCategory from "./components/ProductByCategory";
 
 const App = () => {
   return (
@@ -21,6 +23,8 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/product/:id" element={<ProductDetail />} />
+          <Route path="/category/:category" element={<ProductsByCategory />} />
         </Routes>
       </div>
     </Router>
