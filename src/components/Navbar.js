@@ -39,10 +39,8 @@ const Navbar = () => {
           </div>
           <div className="offcanvas-body">
             <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
-              <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
-                  Home
-                </a>
+            <li className="nav-item">
+              <Link to="/" className="nav-link active">Home</Link>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#about-us">
@@ -53,6 +51,11 @@ const Navbar = () => {
                 <a className="nav-link" href="#our-products">
                   Produk
                 </a>
+              </li>
+              <li className="nav-item">
+                <Link to="/cart" className="nav-link">
+                <span class="brand-text font-weight-light">Cart</span>
+                </Link> 
               </li>
               <li class="nav-item dropdown">
                 <Link to="/login" className="nav-link">

@@ -6,6 +6,7 @@ import "../css/Login.css";
 const Login = () => {
   return (
     <div className="d-flex align-items-center min-vh-100 py-4 bg-body-tertiary">
+      <Link to="/" className="btn btn-primary position-fixed top-0 start-0 m-5">Back to Home</Link>
       <div className="form-signin w-100 m-auto">
         <form>
           {/* <img
