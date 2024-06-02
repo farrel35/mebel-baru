@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import '../css/ProductDetail.css';
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -23,12 +24,14 @@ const ProductDetail = () => {
 
   return (
     <div className="container">
-      <h1>{product.title}</h1>
-      <img src={product.image} alt={product.title} style={{ width: "300px", height: "300px", objectFit: "cover" }} />
-      <p>{product.description}</p>
-      <p>
-        <strong>${product.price}</strong>
-      </p>
+        <div className="container-detail">
+            <h1>{product.title}</h1>
+            <img src={product.image} alt={product.title} style={{ width: "300px", height: "300px", objectFit: "cover" }} />
+            <p>{product.description}</p>
+            <p>
+                <strong>${product.price}</strong>
+            </p>
+        </div>
     </div>
   );
 };

@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
+import '../css/ProductByCategory.css';
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 const ProductsByCategory = () => {
   const { category } = useParams();
@@ -18,6 +21,8 @@ const ProductsByCategory = () => {
   }, [category]);
 
   return (
+    <>
+    <Navbar />
     <div className="container">
       <h1>Products in {category}</h1>
       <div className="row">
@@ -38,6 +43,8 @@ const ProductsByCategory = () => {
         ))}
       </div>
     </div>
+    <Footer />
+    </>
   );
 };
 
