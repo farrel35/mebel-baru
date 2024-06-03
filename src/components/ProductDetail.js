@@ -23,14 +23,62 @@ const ProductDetail = () => {
   }
 
   return (
-    <div className="container">
+    /*<div className="container">
+      <h1>{product.title}</h1>
         <div className="container-detail">
-            <h1>{product.title}</h1>
             <img src={product.image} alt={product.title} style={{ width: "300px", height: "300px", objectFit: "cover" }} />
             <p>{product.description}</p>
             <p>
                 <strong>${product.price}</strong>
             </p>
+        </div>
+    </div>*/
+    <div class="container">
+        <div class="main-product">
+            <div class="product-image">
+            <img src={product.image} alt={product.title} style={{ width: "80%", height: "50%", justifyContent: "center"}} />
+            </div>
+            <div class="product-details">
+                <h1 class="product-name">Nama Produk</h1>
+                <p class="product-pattern">Motif</p>
+                <p class="product-price">Harga</p>
+                <button class="add-to-cart">Tambah ke keranjang</button>
+            </div>
+        </div>
+        <div class="product-info">
+            <div class="description">
+                <h2>Deskripsi</h2>
+                <p>Lorem</p>
+            </div>
+            <div class="specifications">
+                <h2>Spesifikasi</h2>
+                <p>Lorem</p>
+            </div>
+        </div>
+        <div class="popular-products">
+            <h2>Popular Product</h2>
+            <div class="products-slider">
+                <div class="product-card">
+                    <div class="product-image-small"></div>
+                    <p class="product-name-small">Nama Produk</p>
+                    <p class="product-price-small">Harga</p>
+                </div>
+                <div class="product-card">
+                    <div class="product-image-small"></div>
+                    <p class="product-name-small">Nama Produk</p>
+                    <p class="product-price-small">Harga</p>
+                </div>
+                <div class="product-card">
+                    <div class="product-image-small"></div>
+                    <p class="product-name-small">Nama Produk</p>
+                    <p class="product-price-small">Harga</p>
+                </div>
+                <div class="product-card">
+                    <div class="product-image-small"></div>
+                    <p class="product-name-small">Nama Produk</p>
+                    <p class="product-price-small">Harga</p>
+                </div>
+            </div>
         </div>
     </div>
   );
