@@ -51,18 +51,22 @@ body {
 
 .product-info {
     margin-top: 20px;
+    border-bottom: 1px solid #ccc;
 }
 
-.description, .specifications {
-    margin-bottom: 20px;
-}
 
 h2 {
     margin: 0 0 10px;
 }
 
-.popular-products {
-    margin-top: 20px;
+.available-products {
+    margin-top: 35px;
+
+}
+
+.available-products h2 {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .products-slider {
@@ -72,6 +76,7 @@ h2 {
 
 .product-card {
     width: 23%;
+    height: 100%;
     background-color: #f5f5f5;
     padding: 10px;
     text-align: center;

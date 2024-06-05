@@ -39,7 +39,7 @@ const ProductDetail = () => {
             <img src={product.image} alt={product.title} style={{ width: "80%", height: "50%", justifyContent: "center"}} />
             </div>
             <div class="product-details">
-                <h1 class="product-name">Nama Produk</h1>
+                <h1 class="product-name">{product.title}</h1>
                 <p class="product-pattern">Motif</p>
                 <p class="product-price">Harga</p>
                 <button class="add-to-cart">Tambah ke keranjang</button>
@@ -48,15 +48,11 @@ const ProductDetail = () => {
         <div class="product-info">
             <div class="description">
                 <h2>Deskripsi</h2>
-                <p>Lorem</p>
-            </div>
-            <div class="specifications">
-                <h2>Spesifikasi</h2>
-                <p>Lorem</p>
+                <p>{product.description}</p>
             </div>
         </div>
-        <div class="popular-products">
-            <h2>Popular Product</h2>
+        <div class="available-products">
+            <h2>Avaliable Products</h2>
             <div class="products-slider">
                 <div class="product-card">
                     <div class="product-image-small"></div>

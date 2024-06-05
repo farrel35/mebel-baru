@@ -4,6 +4,16 @@
   background-color: #294b29;
   color: white;
 }
+
+.offcanvas-body {
+  background-color: #294b29;
+}
+
+.offcanvas-header {
+  color: white;
+  background-color: #294b29;
+}
+
 .navbar-brand {
   font-size: 1.5rem;
 }
