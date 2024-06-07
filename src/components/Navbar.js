@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCartShopping,
+  faMagnifyingGlass,
+} from "@fortawesome/free-solid-svg-icons";
 import "../css/Navbar.css";
 import image3 from "../images/user3-128x128.jpg";
 
@@ -47,7 +50,7 @@ const Navbar = () => {
   };
   return (
     <nav className="navbar navbar-expand-lg navbar-dark fixed-top">
-      <div className="container-fluid">
+      <div className="container">
         <a className="navbar-brand" href="#">
           Mebel
         </a>
@@ -62,8 +65,8 @@ const Navbar = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div
-          className="offcanvas offcanvas-end"
-          tabIndex="-1"
+          className="offcanvas offcanvas-end text-bg-dark"
+          tabindex="-1"
           id="offcanvasNavbar2"
           aria-labelledby="offcanvasNavbar2Label"
         >
@@ -79,22 +82,24 @@ const Navbar = () => {
             ></button>
           </div>
           <div className="offcanvas-body">
-            <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
-              <li className="nav-item">
-                <Link to="/" className="nav-link active">
-                  Home
-                </Link>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#about-us">
-                  Tentang Kami
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#our-products">
-                  Produk
-                </a>
-              </li>
+            <div className="navbar-nav justify-content-center flex-grow-1 pe-3">
+              <form
+                className="d-flex mt-3 mt-lg-0 mx-auto search-form"
+                role="search"
+              >
+                <div className="input-group">
+                  <span className="input-group-text">
+                    <FontAwesomeIcon icon={faMagnifyingGlass} />
+                  </span>
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Search"
+                  />
+                </div>
+              </form>
+            </div>
+            <ul className="navbar-nav d-flex justify-content-center">
               <li className="nav-item dropdown">
                 <a
                   className="nav-link"
@@ -112,18 +117,13 @@ const Navbar = () => {
                       <b>Total</b> : Rp {calculateSubtotal()}
                     </li>
                   </a>
-
                   <hr className="dropdown-divider"></hr>
-
                   <li>
                     <Link to="/cart" className="dropdown-item text-center">
                       Keranjang
                     </Link>
                   </li>
                 </ul>
-                {/* <Link to="/cart" className="nav-link">
-                  <span className="brand-text font-weight-light">Cart</span>
-                </Link> */}
               </li>
               <li className="nav-item dropdown">
                 <Link to="/login" className="nav-link">
@@ -142,17 +142,6 @@ const Navbar = () => {
                 </Link>
               </li>
             </ul>
-            <form className="d-flex mt-3 mt-lg-0" role="search">
-              <input
-                className="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button className="btn btn-outline-success" type="submit">
-                Search
-              </button>
-            </form>
           </div>
         </div>
       </div>

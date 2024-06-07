@@ -10,7 +10,7 @@ import Footer from "./components/Footer";
 import WhatsAppWidget from "./components/WhatsAppWidget";
 import Login from "./components/Login";
 import Register from "./components/Register";
-import Cart from "./components/Cart"; 
+import Cart from "./components/Cart";
 import ProductDetail from "./components/ProductDetail";
 import ProductsByCategory from "./components/ProductByCategory";
 
