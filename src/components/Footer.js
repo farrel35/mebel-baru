@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faInstagram,
@@ -97,16 +98,16 @@ const Footer = () => {
               <p className="h6 lh-p mb-3 font-weight-bold">PAGES</p>
               <ul className="footer mb-0 list-unstyled">
                 <li>
-                  <a href="#">Home</a>
+                  <Link to="/">Home</Link>
                 </li>
                 <li>
-                  <a href="#about-us">Tentang Kami</a>
+                  <Link to="/#about-us">Tentang Kami</Link>
                 </li>
                 <li>
-                  <a href="#category">Kategori</a>
+                  <Link to="/#category">Kategori</Link>
                 </li>
                 <li>
-                  <a href="#our-products">Produk</a>
+                  <Link to="/#our-products">Produk</Link>
                 </li>
               </ul>
             </div>

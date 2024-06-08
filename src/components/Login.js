@@ -1,49 +1,56 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
 import "../css/Login.css";
 
 const Login = () => {
   return (
-    <div className="d-flex align-items-center min-vh-100 py-4 bg-body-tertiary">
-      <Link to="/" className="btn btn-primary position-fixed top-0 start-0 m-5">Back to Home</Link>
-      <div className="form-signin w-100 m-auto">
-        <form>
-          {/* <img
-            className="mb-4"
-            src="../assets/brand/bootstrap-logo.svg"
-            alt=""
-            width="72"
-            height="57"
-          /> */}
-          <h1 className="h3 mb-3 fw-normal">Login</h1>
+    <div className="container d-flex flex-column">
+      <div
+        className="row align-items-center justify-content-center g-0
+      min-vh-100"
+      >
+        <div className="col-12 col-md-8 col-lg-6 col-xxl-4 py-5 py-xl-0">
+          <div className="card card-outline smooth-shadow">
+            <div className="card-body p-4">
+              <div className="mb-4">
+                <h1>Login</h1>
+                <p className="mb-6">Please enter your user information.</p>
+              </div>
+              <form>
+                <div className="input-group">
+                  <div className="form-floating mb-3">
+                    <input
+                      type="email"
+                      className="form-control"
+                      id="floatingInput"
+                      placeholder="name@example.com"
+                    />
+                    <label for="floatingInput">Email address</label>
+                  </div>
+                </div>
 
-          <div className="form-floating">
-            <input
-              type="email"
-              className="form-control"
-              id="floatingInput"
-              placeholder="name@example.com"
-            />
-            <label for="floatingInput">Email address</label>
-          </div>
-          <div className="form-floating">
-            <input
-              type="password"
-              className="form-control"
-              id="floatingPassword"
-              placeholder="Password"
-            />
-            <label for="floatingPassword">Password</label>
-          </div>
+                <div className="form-floating mb-3">
+                  <input
+                    type="password"
+                    className="form-control"
+                    id="floatingPassword"
+                    placeholder="Password"
+                  />
+                  <label for="floatingPassword">Password</label>
+                </div>
 
-          <div className="text-start my-3">
-            <Link to="/register">Dont have account? Register</Link>
+                <div className="text-start my-3 ">
+                  <Link to="/register" className="text-success">
+                    Dont have account? Register
+                  </Link>
+                </div>
+                <button className="btn btn-success w-100 py-2" type="submit">
+                  Login
+                </button>
+              </form>
+            </div>
           </div>
-          <button className="btn btn-primary w-100 py-2" type="submit">
-            Login
-          </button>
-        </form>
+        </div>
       </div>
     </div>
   );
