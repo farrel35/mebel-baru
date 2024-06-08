@@ -98,16 +98,16 @@ const Footer = () => {
               <p className="h6 lh-p mb-3 font-weight-bold">PAGES</p>
               <ul className="footer mb-0 list-unstyled">
                 <li>
-                  <Link to="/">Home</Link>
+                  <a href="#">Home</a>
                 </li>
                 <li>
-                  <Link to="/#about-us">Tentang Kami</Link>
+                  <a href="#about-us">Tentang Kami</a>
                 </li>
                 <li>
-                  <Link to="/#category">Kategori</Link>
+                  <a href="#category">Kategori</a>
                 </li>
                 <li>
-                  <Link to="/#our-products">Produk</Link>
+                  <a href="#our-products">Produk</a>
                 </li>
               </ul>
             </div>
