@@ -1,8 +1,13 @@
 #about-us {
   width: 100%;
-  padding: 75px;
+  padding: 25px;
   background-color: #294b29;
   color: white;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }
 
 .h1-center {
@@ -312,4 +317,8 @@
 
 .navigation-button.right {
   right: 0;
+}
+
+.container-test {
+  width: 100%;
 }

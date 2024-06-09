@@ -59,7 +59,7 @@ const Body = () => {
     <div>
       <section id="about-us" className="about-us-section container">
         <h1 className="h1-center"> Tentang Kami</h1>
-        <div className="row featurette p-5">
+        <div className="row featurette">
           <div className="col-md-7">
             <h2 className="featurette-heading lh-1">Mebelin Furniture</h2>
             <p className="lead">
