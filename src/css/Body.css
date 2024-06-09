@@ -318,7 +318,22 @@
 .navigation-button.right {
   right: 0;
 }
-
-.container-test {
-  width: 100%;
+.scrollUp {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  padding: 10px 20px;
+  background: #294b29;
+  color: #fff;
+  font-size: 25px;
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  line-height: 45px;
+  padding: 0;
+  border-radius: 3px;
+  box-shadow: 0px 0px 10px #00000026;
+}
+.scrollUp:hover {
+  background: #2c2d3f;
 }

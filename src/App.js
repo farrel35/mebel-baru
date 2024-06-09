@@ -14,6 +14,7 @@ import Cart from "./components/Cart";
 import ProductDetail from "./components/ProductDetail";
 import ProductsByCategory from "./components/ProductByCategory";
 import AllProducts from "./components/AllProducts";
+import BackToTopButton from "./components/BackToTopButton";
 
 const App = () => {
   return (
@@ -53,8 +54,9 @@ const Home = () => (
     <Navbar />
     <Carousel />
     <Body />
-    <WhatsAppWidget />
+    {/* <WhatsAppWidget /> */}
     <Footer />
+    <BackToTopButton />
   </>
 );
 
