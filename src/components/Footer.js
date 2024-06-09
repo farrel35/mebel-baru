@@ -114,7 +114,7 @@ const Footer = () => {
           </div>
         </div>
       </footer>
-      <footer class="bg-dark py-2 text-light privacy">
+      <footer class="footer-2 py-2 text-light privacy">
         <p class="text-center px-5 mb-0 d-flex flex-column flex-sm-row justify-content-center">
           <span class="mb-1 mb-sm-0">
             © 2024 Mebelin Furniture. All Rights Reserved.

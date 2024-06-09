@@ -12,9 +12,10 @@ footer a.navbar-brand:hover {
   background-color: #294b29;
 }
 
-/* .footer-2 {
-  background-color: #153015;
-} */
+.footer-2 {
+  background-color: #294b29;
+  border-top: 1px solid white;
+}
 
 footer ul.footer {
   list-style: none;
