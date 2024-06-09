@@ -120,9 +120,9 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark fixed-top">
       <div className="container">
-        <a className="navbar-brand" href="#">
-          Mebel
-        </a>
+        <Link to="/" className="navbar-brand">
+          Mebelin
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -151,13 +151,13 @@ const Navbar = () => {
             ></button>
           </div>
           <div className="offcanvas-body">
-            <ul className="navbar-nav">
+            {/* <ul className="navbar-nav">
               <li className="nav-item">
                 <Link to="/" className="nav-link">
                   Home
                 </Link>
               </li>
-            </ul>
+            </ul> */}
             <div className="navbar-nav justify-content-center flex-grow-1 pe-3">
               <form
                 className="d-flex mt-3 mt-lg-0 mx-auto search-form"

@@ -13,6 +13,7 @@ import Register from "./components/Register";
 import Cart from "./components/Cart";
 import ProductDetail from "./components/ProductDetail";
 import ProductsByCategory from "./components/ProductByCategory";
+import AllProducts from "./components/AllProducts";
 
 const App = () => {
   return (
@@ -37,6 +38,8 @@ const App = () => {
             </>
           }
         />
+        <Route path="/all-products/" element={<AllProducts />} />
+
         <Route path="/cart" element={<Cart />} />
         <Route path="/product/:id" element={<ProductDetail />} />
         <Route path="/category/:category" element={<ProductsByCategory />} />
