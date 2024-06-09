@@ -2,11 +2,13 @@ import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "../css/Body.css";
-import qualityImage from "../images/qualiti.png";
-import serviceImage from "../images/jabat.png";
-import varietyImage from "../images/jempol.png";
-import affordabilityImage from "../images/uang.png";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faSackDollar,
+  faThumbsUp,
+  faHandshake,
+  faMedal,
+} from "@fortawesome/free-solid-svg-icons";
 const Body = () => {
   const productsWrapperRef = useRef(null);
 
@@ -93,7 +95,8 @@ const Body = () => {
         <div className="row">
           <div className="col-md-3">
             <div className="card why-choose-us-card card-transition">
-              <img src={qualityImage} className="card-img-top" alt="Quality" />
+              <FontAwesomeIcon icon={faMedal} size="10x" className="m-4" />
+
               <div className="card-body">
                 <h5 className="card-title">Quality</h5>
                 <p className="card-text">
@@ -104,7 +107,8 @@ const Body = () => {
           </div>
           <div className="col-md-3">
             <div className="card why-choose-us-card">
-              <img src={serviceImage} className="card-img-top" alt="Service" />
+              <FontAwesomeIcon icon={faHandshake} size="10x" className="m-4" />
+
               <div className="card-body">
                 <h5 className="card-title">Service</h5>
                 <p className="card-text">
@@ -115,7 +119,8 @@ const Body = () => {
           </div>
           <div className="col-md-3">
             <div className="card why-choose-us-card">
-              <img src={varietyImage} className="card-img-top" alt="Variety" />
+              <FontAwesomeIcon icon={faThumbsUp} size="10x" className="m-4" />
+
               <div className="card-body">
                 <h5 className="card-title">Variety</h5>
                 <p className="card-text">
@@ -126,12 +131,8 @@ const Body = () => {
           </div>
           <div className="col-md-3">
             <div className="card why-choose-us-card">
-              <img
-                src={affordabilityImage}
-                className="card-img-top"
-                height="64"
-                alt="Affordability"
-              />
+              <FontAwesomeIcon icon={faSackDollar} size="10x" className="m-4" />
+
               <div className="card-body">
                 <h5 className="card-title">Affordability</h5>
                 <p className="card-text">
@@ -145,10 +146,8 @@ const Body = () => {
 
       {/* Bagian Kategori */}
       <section id="category" className="container">
-        <h1 className="h1-center">
-          <hr />
-          Kategori
-        </h1>
+        <hr />
+        <h1 className="h1-center">Kategori</h1>
         <div className="row">
           {categories.map((category, index) => (
             <div className="col-md-3" key={index}>
