@@ -32,6 +32,9 @@ const ProductDetail = () => {
       .catch((error) => {
         console.error("Error fetching available products:", error);
       });
+
+    // Scroll to top when product ID changes
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }, [id]);
 
   const handlePageChange = (action) => {
