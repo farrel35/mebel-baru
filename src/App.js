@@ -38,11 +38,43 @@ const App = () => {
             </>
           }
         />
-        <Route path="/all-products/" element={<AllProducts />} />
+        <Route
+          path="/all-products/"
+          element={
+            <>
+              <AllProducts />
+              <BackToTopButton />
+            </>
+          }
+        />
 
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/product/:id" element={<ProductDetail />} />
-        <Route path="/category/:category" element={<ProductsByCategory />} />
+        <Route
+          path="/cart"
+          element={
+            <>
+              <Cart />
+              <BackToTopButton />
+            </>
+          }
+        />
+        <Route
+          path="/product/:id"
+          element={
+            <>
+              <ProductDetail />
+              <BackToTopButton />
+            </>
+          }
+        />
+        <Route
+          path="/category/:category"
+          element={
+            <>
+              <ProductsByCategory />
+              <BackToTopButton />
+            </>
+          }
+        />
       </Routes>
     </Router>
   );
