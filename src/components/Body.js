@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
-import axios from "axios";
 import { Link } from "react-router-dom";
-import "../css/Body.css";
+import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faSackDollar,
@@ -9,6 +8,7 @@ import {
   faHandshake,
   faMedal,
 } from "@fortawesome/free-solid-svg-icons";
+import "../css/Body.css";
 
 const Body = () => {
   const productsWrapperRef = useRef(null);

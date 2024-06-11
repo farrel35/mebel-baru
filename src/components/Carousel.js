@@ -1,11 +1,11 @@
 import React from "react";
-import "../css/Carousel.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import image1 from "../images/bg-2.png";
 import image2 from "../images/bg-sofaijo.png";
 import image3 from "../images/bg-1.png";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "../css/Carousel.css";
 
-import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 const Carousel = () => {
   return (
     <div

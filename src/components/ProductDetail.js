@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
-import "../css/ProductDetail.css";
 import Navbar from "./Navbar";
 import Footer from "./Footer"; // Import the Footer component
+import "../css/ProductDetail.css";
 
 const ProductDetail = () => {
   const { id } = useParams();

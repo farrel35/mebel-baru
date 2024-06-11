@@ -7,7 +7,6 @@ import Navbar from "./components/Navbar";
 import Carousel from "./components/Carousel";
 import Body from "./components/Body";
 import Footer from "./components/Footer";
-import WhatsAppWidget from "./components/WhatsAppWidget";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Cart from "./components/Cart";
@@ -54,7 +53,6 @@ const Home = () => (
     <Navbar />
     <Carousel />
     <Body />
-    {/* <WhatsAppWidget /> */}
     <Footer />
     <BackToTopButton />
   </>

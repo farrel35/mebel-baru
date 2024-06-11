@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCartShopping,
   faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons";
-import "../css/Navbar.css";
 import image3 from "../images/user3-128x128.jpg";
 import logo from "../images/logo.png";
+import "../css/Navbar.css";
 
 const Navbar = () => {
   const [cart, setCart] = useState(null);

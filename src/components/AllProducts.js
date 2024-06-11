@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import "../css/AllProduct.css";
@@ -53,11 +53,14 @@ const AllProducts = () => {
   // Pagination logic
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
-  const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
+  const currentProducts = products.slice(
+    indexOfFirstProduct,
+    indexOfLastProduct
+  );
 
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const pageNumbers = [];
@@ -107,10 +110,7 @@ const AllProducts = () => {
                     <div className="card our-produk-card">
                       <Link to={`/product/${product.id}`}>
                         <div className="card-img-container">
-                          <img
-                            src={product.image}
-                            alt={product.title}
-                          />
+                          <img src={product.image} alt={product.title} />
                         </div>
                       </Link>
                       <div className="card-body">
