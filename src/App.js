@@ -20,61 +20,13 @@ const App = () => {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route
-          path="/login"
-          element={
-            <>
-              <Navbar />
-              <Login />
-            </>
-          }
-        />
-        <Route
-          path="/register"
-          element={
-            <>
-              <Navbar />
-              <Register />
-            </>
-          }
-        />
-        <Route
-          path="/all-products/"
-          element={
-            <>
-              <AllProducts />
-              <BackToTopButton />
-            </>
-          }
-        />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/all-products/" element={<AllProducts />} />
 
-        <Route
-          path="/cart"
-          element={
-            <>
-              <Cart />
-              <BackToTopButton />
-            </>
-          }
-        />
-        <Route
-          path="/product/:id"
-          element={
-            <>
-              <ProductDetail />
-              <BackToTopButton />
-            </>
-          }
-        />
-        <Route
-          path="/category/:category"
-          element={
-            <>
-              <ProductByCategory />
-              <BackToTopButton />
-            </>
-          }
-        />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/product/:id" element={<ProductDetail />} />
+        <Route path="/category/:category" element={<ProductByCategory />} />
       </Routes>
     </Router>
   );

@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import BackToTopButton from "./BackToTopButton";
+
 import "../css/AllProduct.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -141,6 +143,7 @@ const AllProducts = () => {
         </div>
       </div>
       <Footer />
+      <BackToTopButton />
     </>
   );
 };

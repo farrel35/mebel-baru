@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import BackToTopButton from "./BackToTopButton";
 import "../css/ProductByCategory.css";
 
 const ProductByCategory = () => {
@@ -48,6 +49,7 @@ const ProductByCategory = () => {
         </div>
       </div>
       <Footer />
+      <BackToTopButton />
     </>
   );
 };
