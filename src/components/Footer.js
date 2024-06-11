@@ -14,8 +14,8 @@ const Footer = () => {
     <>
       <React.Fragment />
       <footer className="footer-1 py-4 text-light">
-        <div className="container py-2">
-          <div className="row mb-3">
+        <div className="container">
+          <div className="row">
             <div className="col-12 col-lg-5 mb-4">
               <a className="navbar-brand" href="#">
                 <img
