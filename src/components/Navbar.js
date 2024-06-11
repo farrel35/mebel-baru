@@ -8,11 +8,14 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import "../css/Navbar.css";
 import image3 from "../images/user3-128x128.jpg";
+import logo from "../images/logo.png";
 
 const Navbar = () => {
   const [cart, setCart] = useState(null);
   const [products, setProducts] = useState([]);
   const [cartItems, setCartItems] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
 
   useEffect(() => {
     // Fetch cart data
@@ -61,10 +64,24 @@ const Navbar = () => {
     );
   };
 
+  const handleSearchInputChange = (event) => {
+    const query = event.target.value;
+    setSearchQuery(query);
+
+    if (query.length > 0) {
+      const results = products.filter((product) =>
+        product.title.toLowerCase().includes(query.toLowerCase())
+      );
+      setSearchResults(results);
+    } else {
+      setSearchResults([]);
+    }
+  };
+
   const renderItems = () => {
     if (cartItems.length === 0) {
       return (
-        <a class="dropdown-item" href="#">
+        <a className="dropdown-item" href="#">
           <li>
             <b>No cart</b>
           </li>
@@ -121,7 +138,14 @@ const Navbar = () => {
     <nav className="navbar navbar-expand-lg navbar-dark fixed-top">
       <div className="container">
         <Link to="/" className="navbar-brand">
-          Mebelin
+          <img
+            src={logo}
+            alt="Mebelin Furniture Logo"
+            style={{
+              width: "75px",
+              height: "auto",
+            }}
+          />
         </Link>
         <button
           className="navbar-toggler"
@@ -135,7 +159,7 @@ const Navbar = () => {
         </button>
         <div
           className="offcanvas offcanvas-end text-bg-dark"
-          tabindex="-1"
+          tabIndex="-1"
           id="offcanvasNavbar2"
           aria-labelledby="offcanvasNavbar2Label"
         >
@@ -151,16 +175,9 @@ const Navbar = () => {
             ></button>
           </div>
           <div className="offcanvas-body">
-            {/* <ul className="navbar-nav">
-              <li className="nav-item">
-                <Link to="/" className="nav-link">
-                  Home
-                </Link>
-              </li>
-            </ul> */}
             <div className="navbar-nav justify-content-center flex-grow-1 pe-3">
               <form
-                className="d-flex mt-3 mt-lg-0 mx-auto search-form"
+                className="d-flex mt-3 mt-lg-0 mx-auto search-form position-relative"
                 role="search"
               >
                 <div className="input-group">
@@ -171,8 +188,24 @@ const Navbar = () => {
                     type="text"
                     className="form-control"
                     placeholder="Search"
+                    value={searchQuery}
+                    onChange={handleSearchInputChange}
                   />
                 </div>
+                {searchResults.length > 0 && (
+                  <ul className="dropdown-menu show search-dropdown position-absolute">
+                    {searchResults.map((result) => (
+                      <li key={result.id}>
+                        <Link
+                          to={`/product/${result.id}`}
+                          className="dropdown-item"
+                        >
+                          {result.title}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </form>
             </div>
             <ul className="navbar-nav d-flex justify-content-center">

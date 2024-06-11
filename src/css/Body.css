@@ -146,15 +146,15 @@
 /* Gaya khusus untuk kartu produk pada bagian Our Products */
 .our-products-section .our-produk-card {
   border-radius: 8px;
-    overflow: hidden;
-    background-color: #ffffff;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid #ddd;
-    padding: 20px;
+  overflow: hidden;
+  background-color: #ffffff;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #ddd;
+  padding: 20px;
 }
 
 .our-products-section .our-produk-card:hover {
@@ -189,7 +189,7 @@
 
 /* sale */
 #sale {
-  background-image: url(../images/bg-2.png);
+  background-image: url(../images/sale.png);
   background-size: cover;
   background-position: center;
   object-fit: cover;
