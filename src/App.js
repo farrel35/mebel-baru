@@ -11,7 +11,7 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import Cart from "./components/Cart";
 import ProductDetail from "./components/ProductDetail";
-import ProductsByCategory from "./components/ProductByCategory";
+import ProductByCategory from "./components/ProductByCategory";
 import AllProducts from "./components/AllProducts";
 import BackToTopButton from "./components/BackToTopButton";
 
@@ -70,7 +70,7 @@ const App = () => {
           path="/category/:category"
           element={
             <>
-              <ProductsByCategory />
+              <ProductByCategory />
               <BackToTopButton />
             </>
           }

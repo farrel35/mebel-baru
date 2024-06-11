@@ -5,7 +5,7 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import "../css/ProductByCategory.css";
 
-const ProductsByCategory = () => {
+const ProductByCategory = () => {
   const { category } = useParams();
   const [products, setProducts] = useState([]);
 
@@ -52,4 +52,4 @@ const ProductsByCategory = () => {
   );
 };
 
-export default ProductsByCategory;
+export default ProductByCategory;
