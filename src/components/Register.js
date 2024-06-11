@@ -49,7 +49,7 @@ const Register = () => {
                   </div>
 
                   <div className="text-start my-3">
-                    <Link to="/login" className="text-success">
+                    <Link to="/login" className="text-success a-none">
                       Have account? Login
                     </Link>
                   </div>

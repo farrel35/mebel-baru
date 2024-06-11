@@ -24,7 +24,7 @@ const ProductByCategory = () => {
   return (
     <>
       <Navbar />
-      <div className="container">
+      <div className="container container-pcategory">
         <h1>Products in {category}</h1>
         <div className="row">
           {products.map((product) => (

@@ -43,7 +43,7 @@ const Login = () => {
                   </div>
 
                   <div className="text-start my-3 ">
-                    <Link to="/register" className="text-success">
+                    <Link to="/register" className="text-success a-none">
                       Dont have account? Register
                     </Link>
                   </div>
