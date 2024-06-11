@@ -27,8 +27,9 @@ const Footer = () => {
                     marginBottom: "10px",
                   }}
                 />
-                {/* <br></br>
-                <b>Mebelin Furniture</b> */}
+                <span style={{ display: "block", marginTop: "10px" }}>
+                  <b>Mebelin Furniture</b>
+                </span>
               </a>
               <p
                 style={{
