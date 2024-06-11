@@ -6,7 +6,6 @@ import Footer from "./Footer";
 import BackToTopButton from "./BackToTopButton";
 
 import "../css/AllProduct.css";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 const AllProducts = () => {
   const [products, setProducts] = useState([]);
