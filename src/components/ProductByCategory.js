@@ -29,7 +29,7 @@ const ProductByCategory = () => {
         <div className="row">
           {products.map((product) => (
             <div className="col-md-3" key={product.id}>
-              <div className="card">
+              <div className="card-category">
                 <Link to={`/product/${product.id}`}>
                   <img
                     src={product.image}

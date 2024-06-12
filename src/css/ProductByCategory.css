@@ -7,7 +7,7 @@
   text-align: center;
 }
 
-.card {
+.card-category {
   padding-top: 25px;
   border-radius: 8px;
   overflow: hidden;
@@ -21,13 +21,13 @@
   padding: 20px;
 }
 
-.card:hover {
+.card-category:hover {
   transform: translateY(-10px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 /* Styling for the image inside the product card */
-.card .card-img-top{
+.card-category .card-img-top{
   width: 100%;
   height: 200px;
   max-width: 100%;
