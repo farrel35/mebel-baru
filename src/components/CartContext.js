@@ -17,6 +17,7 @@ export const CartProvider = ({ children }) => {
             : item
         );
       } else {
+        console.log(prevCart);
         return [...prevCart, { ...product, quantity: 1 }];
       }
     });
@@ -46,7 +47,13 @@ export const CartProvider = ({ children }) => {
 
   return (
     <CartContext.Provider
-      value={{ cart, addToCart, increaseQuantity, decreaseQuantity, removeItem }}
+      value={{
+        cart,
+        addToCart,
+        increaseQuantity,
+        decreaseQuantity,
+        removeItem,
+      }}
     >
       {children}
     </CartContext.Provider>

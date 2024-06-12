@@ -28,7 +28,7 @@ const ProductByCategory = () => {
         <h1>Products in {category}</h1>
         <div className="row">
           {products.map((product) => (
-            <div className="col-md-3" key={product.id}>
+            <div className="col-md-3 mb-5" key={product.id}>
               <div className="card-category">
                 <Link to={`/product/${product.id}`}>
                   <img
