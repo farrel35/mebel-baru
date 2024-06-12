@@ -1,139 +1,72 @@
+// Import useState dan useEffect dari React
 import React, { useState, useEffect } from "react";
+// Import Link dari react-router-dom
 import { Link } from "react-router-dom";
-import axios from "axios";
+// Import FontAwesomeIcon dari @fortawesome/react-fontawesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faCartShopping,
-  faMagnifyingGlass,
-} from "@fortawesome/free-solid-svg-icons";
+// Import ikon faCartShopping dan faMagnifyingGlass dari @fortawesome/free-solid-svg-icons
+import { faCartShopping, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+// Import useCart dari CartContext
+import { useCart } from "../components/CartContext"; 
+// Import gambar image3 dan logo
 import image3 from "../images/user3-128x128.jpg";
 import logo from "../images/logo.png";
+// Import CSS untuk Navbar
 import "../css/Navbar.css";
 
+// Komponen Navbar
 const Navbar = () => {
-  const [cart, setCart] = useState(null);
-  const [products, setProducts] = useState([]);
-  const [cartItems, setCartItems] = useState([]);
+  // Gunakan useCart untuk mengakses data keranjang belanja
+  const { cartItems, calculateSubtotal } = useCart(); 
+  // Deklarasikan state untuk pencarian dan hasil pencarian
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
 
-  useEffect(() => {
-    // Fetch cart data
-    axios
-      .get("https://fakestoreapi.com/carts/user/4")
-      .then((response) => {
-        if (response.data.length > 0) {
-          setCart(response.data[0]);
-        }
-      })
-      .catch((error) => console.error("Error fetching cart:", error));
-
-    // Fetch products data
-    axios
-      .get("https://fakestoreapi.com/products")
-      .then((response) => {
-        setProducts(response.data);
-      })
-      .catch((error) => console.error("Error fetching products:", error));
-  }, []);
-
-  useEffect(() => {
-    if (cart && products.length > 0) {
-      const items = cart.products
-        .map((cartItem) => {
-          const product = products.find((p) => p.id === cartItem.productId);
-          if (product) {
-            return {
-              ...cartItem,
-              title: product.title,
-              price: product.price,
-              image: product.image,
-            };
-          }
-          return null;
-        })
-        .filter((item) => item !== null);
-      setCartItems(items);
-    }
-  }, [cart, products]);
-
-  const calculateSubtotal = () => {
-    return cartItems.reduce(
-      (total, item) => total + item.price * item.quantity,
-      0
-    );
-  };
-
+  // Fungsi untuk menghandle perubahan input pencarian
   const handleSearchInputChange = (event) => {
     const query = event.target.value;
     setSearchQuery(query);
 
-    if (query.length > 0) {
-      const results = products.filter((product) =>
-        product.title.toLowerCase().includes(query.toLowerCase())
-      );
-      setSearchResults(results);
-    } else {
-      setSearchResults([]);
-    }
+    // Lakukan pencarian
   };
 
+  // Fungsi untuk merender item keranjang belanja
   const renderItems = () => {
-    if (cartItems.length === 0) {
+    // Jika tidak ada item dalam keranjang
+    if (!cartItems || cartItems.length === 0) {
       return (
-        <a className="dropdown-item" href="#">
-          <li>
-            <b>No cart</b>
-          </li>
-        </a>
+        <li className="dropdown-item">
+          <b>No items in cart</b>
+        </li>
       );
     }
+  
+    // Jika ada item dalam keranjang
     return (
       <>
         {cartItems.map((item) => (
-          <li key={item.productId}>
-            <Link
-              to={`/product/${item.productId}`}
-              className="dropdown-item d-flex gap-3"
-            >
-              <img
-                src={item.image}
-                alt={item.title}
-                width="64"
-                height="64"
-                className="flex-shrink-0"
-              />
-              <div className="d-flex gap-2 w-100 justify-content-between">
-                <div>
-                  <h6 className="mb-0">{item.title}</h6>
-                  <p className="mb-0 opacity-75">
-                    {item.quantity} x Rp {item.price}
-                  </p>
-                  <p className="mb-0 opacity-75">
-                    <i className="fa fa-calculator"></i> Rp{" "}
-                    {item.price * item.quantity}
-                  </p>
-                </div>
-              </div>
-            </Link>
-            <hr className="dropdown-divider"></hr>
+          <li key={item.productId} className="dropdown-item">
+            <img src={item.image} alt={item.title} width="64" height="64" className="flex-shrink-0" />
+            <div className="d-flex flex-column justify-content-between ms-3">
+              <h6>{item.title}</h6>
+              <p>{item.quantity} x Rp {item.price}</p>
+            </div>
           </li>
         ))}
-        <a className="dropdown-item" href="#">
-          <li>
-            <b>Total</b> : Rp {calculateSubtotal()}
-          </li>
-        </a>
-        <hr className="dropdown-divider"></hr>
+        <li className="dropdown-item">
+          <b>Total</b>: Rp {calculateSubtotal()}
+        </li>
+        <li className="dropdown-divider"></li>
         <li>
-          <Link to="/cart" className="dropdown-item text-center">
-            Keranjang
+          <Link to="/cart" className="dropdown-item">
+            View Cart
           </Link>
         </li>
       </>
     );
   };
 
+  // Return navbar
   return (
     <nav className="navbar navbar-expand-lg navbar-dark fixed-top">
       <div className="container">
