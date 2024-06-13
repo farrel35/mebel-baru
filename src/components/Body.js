@@ -142,7 +142,7 @@ const Body = () => {
             <div className="row">
               <div className="col-md-3">
                 <div className="card why-choose-us-card card-transition">
-                  <FontAwesomeIcon icon={faMedal} size="10x" className="m-4" />
+                  <FontAwesomeIcon icon={faMedal} size="5x" className="m-4" />
 
                   <div className="card-body">
                     <h5 className="card-title">Quality</h5>
@@ -153,10 +153,10 @@ const Body = () => {
                 </div>
               </div>
               <div className="col-md-3">
-                <div className="card why-choose-us-card">
+                <div className="card why-choose-us-card card-transition">
                   <FontAwesomeIcon
                     icon={faHandshake}
-                    size="10x"
+                    size="5x"
                     className="m-4"
                   />
 
@@ -170,10 +170,10 @@ const Body = () => {
                 </div>
               </div>
               <div className="col-md-3">
-                <div className="card why-choose-us-card">
+                <div className="card why-choose-us-card card-transition">
                   <FontAwesomeIcon
                     icon={faThumbsUp}
-                    size="10x"
+                    size="5x"
                     className="m-4"
                   />
 
@@ -186,10 +186,10 @@ const Body = () => {
                 </div>
               </div>
               <div className="col-md-3">
-                <div className="card why-choose-us-card">
+                <div className="card why-choose-us-card card-transition">
                   <FontAwesomeIcon
                     icon={faSackDollar}
-                    size="10x"
+                    size="5x"
                     className="m-4"
                   />
 
