@@ -180,7 +180,7 @@
   text-decoration: none;
   font-size: 1.2rem;
   border-radius: 4px;
-  transition: border-color 0.3s ease;
+  transition: 0.8s ease;
 }
 
 .btn:hover {
