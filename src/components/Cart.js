@@ -5,11 +5,12 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import BackToTopButton from "./BackToTopButton";
 import { useCart } from "../components/CartContext";
+import "../css/Cart.css";
 
 const Cart = () => {
   const TAX_RATE = 0.01;
   const { cart, increaseQuantity, decreaseQuantity, removeItem } = useCart();
-  
+
   const [shippingInfo, setShippingInfo] = useState({
     address: "",
     phoneNumber: "",
@@ -102,7 +103,7 @@ const Cart = () => {
                 <div className="row">
                   <div className="col-lg-7">
                     <h5 className="mb-3">
-                      <Link to="/" className="text-body">
+                      <Link to="/" className="text-body a-none">
                         <i className="fas fa-long-arrow-alt-left me-2"></i>
                         Continue shopping
                       </Link>
@@ -116,22 +117,22 @@ const Cart = () => {
                           You have {cart.length} items in your cart
                         </p>
                       </div>
-                      <div>
+                      {/* <div>
                         <p className="mb-0">
                           <span className="text-muted">Sort by:</span>{" "}
                           <a href="#!" className="text-body">
                             price <i className="fas fa-angle-down mt-1"></i>
                           </a>
                         </p>
-                      </div>
+                      </div> */}
                     </div>
 
                     {renderItems()}
                   </div>
 
                   <div className="col-lg-5">
-                    <div className="card bg-primary text-white rounded-3">
-                      <div className="card-body">
+                    <div className="card bg-green text-white rounded-3">
+                      <div className="card-body text-end">
                         <div className="d-flex justify-content-between align-items-center mb-4">
                           <h5 className="mb-0">Shipping Details</h5>
                         </div>
@@ -174,7 +175,7 @@ const Cart = () => {
                           </div>
                           <button
                             type="submit"
-                            className="btn btn-info btn-block"
+                            className="btn btn-success btn-block"
                           >
                             Checkout
                           </button>

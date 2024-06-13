@@ -143,7 +143,9 @@ const Navbar = () => {
                 <li className="nav-item dropdown">
                   <a href="#" className="nav-link" id="cartDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <FontAwesomeIcon icon={faCartShopping} />
-                    <span className="badge bg-danger">{cart.length}</span>
+                    <span class="position-absolute top-5 translate-middle badge bg-danger navbar-badge">
+                      {cart.length}
+                    </span>
                   </a>
                   <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="cartDropdown">
                     {renderItems()}

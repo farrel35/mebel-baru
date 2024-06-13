@@ -97,3 +97,7 @@
 .custom-submenu-link:hover {
   color: #ffc107;
 }
+
+.navbar-badge {
+  padding: 2px 4px;
+}
