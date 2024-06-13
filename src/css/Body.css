@@ -103,8 +103,8 @@
   margin: 0 auto;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
-  width: 50%; /* Mengatur lebar gambar menjadi 50% dari lebar kartu */
-  height: 50%; /* Mengatur tinggi gambar agar proporsional */
+  width: 50%;
+  height: 50%;
 }
 
 .why-choose-us-section .why-choose-us-card .card-body {
@@ -121,6 +121,85 @@
 .why-choose-us-section .why-choose-us-card .card-text {
   font-size: 1rem;
   color: #6c757d;
+}
+
+/* hero css */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+}
+
+.hero-image {
+  flex: 0 0 45%; /* Adjust as needed */
+  max-width: 45%;
+  margin-bottom: 1rem;
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hero-content {
+  flex: 0 0 45%; /* Adjust as needed */
+  max-width: 45%;
+}
+
+.hero-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+.hero-features {
+  list-style-type: none;
+  padding: 0;
+}
+
+.hero-features li {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.btn {
+  display: inline-block;
+  background-color: transparent;
+  color: #294b29;
+  border: 2px solid #294b29;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  font-size: 1.2rem;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #294b29;
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-image,
+  .hero-content {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
 }
 
 /* OurProducts.css */
