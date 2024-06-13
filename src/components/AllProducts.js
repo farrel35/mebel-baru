@@ -105,22 +105,31 @@ const AllProducts = () => {
           </div>
           <div className="col-md-10">
             <section id="all-products" className="all-products-section">
-              <div className="row">
-                {currentProducts.map((product) => (
-                  <div className="col-md-3 mb-5" key={product.id}>
-                    <div className="card our-produk-card">
-                      <Link to={`/product/${product.id}`}>
-                        <div className="card-img-container">
-                          <img src={product.image} alt={product.title} />
-                        </div>
-                      </Link>
-                      <div className="card-body">
-                        <h5 className="card-title">{product.title}</h5>
-                        <p className="card-text">${product.price}</p>
+              <div id="our-products" className="our-products-section">
+                <div className="row">
+                  {currentProducts.map((product) => (
+                    <div className="col-md-3 mb-5" key={product.id}>
+                      <div className="card our-produk-card">
+                        <Link
+                          to={`/product/${product.id}`}
+                          className="card-link"
+                        >
+                          <img
+                            src={product.image}
+                            className="card-img-top"
+                            alt={product.title}
+                          />
+                          <div className="card-body">
+                            <h5 className="card-title">{product.title}</h5>
+                            <p className="card-text">
+                              <strong>${product.price}</strong>
+                            </p>
+                          </div>
+                        </Link>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
               <nav>
                 <ul className="pagination">

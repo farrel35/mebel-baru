@@ -24,25 +24,28 @@ const ProductByCategory = () => {
   return (
     <>
       <Navbar />
-      <div className="container container-pcategory">
+      <div
+        id="our-products"
+        className="our-products-section container container-pcategory"
+      >
         <h1>Products in {category}</h1>
         <div className="row">
           {products.map((product) => (
             <div className="col-md-3 mb-5" key={product.id}>
-              <div className="card-category">
-                <Link to={`/product/${product.id}`}>
+              <div className="card our-produk-card">
+                <Link to={`/product/${product.id}`} className="card-link">
                   <img
                     src={product.image}
                     className="card-img-top"
                     alt={product.title}
                   />
+                  <div className="card-body">
+                    <h5 className="card-title">{product.title}</h5>
+                    <p className="card-text">
+                      <strong>${product.price}</strong>
+                    </p>
+                  </div>
                 </Link>
-                <div className="card-body">
-                  <h5 className="card-title">{product.title}</h5>
-                  <p className="card-text">
-                    <strong>${product.price}</strong>
-                  </p>
-                </div>
               </div>
             </div>
           ))}

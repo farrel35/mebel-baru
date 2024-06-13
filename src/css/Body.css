@@ -184,7 +184,10 @@
   padding: 1rem;
   flex-grow: 1;
 }
-
+.our-products-section .our-produk-card .card-link {
+  text-decoration: none;
+  color: black;
+}
 .our-products-section .our-produk-card .card-title {
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
@@ -211,6 +214,7 @@
   opacity: 0;
   transform: translateY(100%);
   transition: transform 0.3s ease, opacity 0.3s ease;
+  pointer-events: none;
 }
 
 .our-products-section .our-produk-card:hover::after {
@@ -464,4 +468,8 @@
   .accordion-body {
     padding: 15px;
   }
+}
+.a-product {
+  color: white;
+  text-decoration: none;
 }
