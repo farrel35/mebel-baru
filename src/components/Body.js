@@ -268,10 +268,10 @@ const Body = () => {
         </div>
 
         {/* Sale */}
-        <section id="sale" className="container-fluid"></section>
+        {/* <section id="sale" className="container-fluid"></section> */}
 
         {/* Bagian Produk dengan navigasi */}
-        <section className="products-container container">
+        {/* <section className="products-container container">
           <h1 className="h1-center">Produk Populer</h1>
           <button className="navigation-button left" onClick={scrollLeft}>
             &lt;
@@ -347,7 +347,7 @@ const Body = () => {
           <button className="navigation-button right" onClick={scrollRight}>
             &gt;
           </button>
-        </section>
+        </section> */}
 
         {/* Bagian FAQ */}
         <section id="faq" className="faq-section container p-3">
