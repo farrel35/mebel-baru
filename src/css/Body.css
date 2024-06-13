@@ -124,6 +124,7 @@
 }
 
 /* OurProducts.css */
+/* OurProducts.css */
 /* Gaya untuk header */
 .our-products-header {
   display: flex;
@@ -149,6 +150,7 @@
 
 /* Gaya khusus untuk kartu produk pada bagian Our Products */
 .our-products-section .our-produk-card {
+  position: relative; /* Tambahkan ini untuk pseudo-elemen */
   border-radius: 8px;
   overflow: hidden;
   background-color: #ffffff;
@@ -192,6 +194,28 @@
   font-size: 1rem;
   color: #333333;
   margin-top: auto;
+}
+
+/* Gaya hover untuk kartu produk */
+.our-products-section .our-produk-card::after {
+  content: "Lihat Produk";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #294b29b3;
+  color: #ffffff;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 1rem;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.our-products-section .our-produk-card:hover::after {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* sale */
