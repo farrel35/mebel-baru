@@ -47,6 +47,11 @@ const ProductDetail = () => {
     }
   };
 
+  const handleAddToCart = (product) => {
+    addToCart(product);
+    alert(`${product.title} has been added to the cart.`);
+  };
+
   if (!product || !availableProducts.length) {
     return <div>Loading...</div>;
   }
@@ -67,7 +72,7 @@ const ProductDetail = () => {
             <p className="product-id">Product ID : {product.id}</p>
             <h1 className="product-name">{product.title}</h1>
             <p className="product-price">Harga : ${product.price}</p>
-            <button className="add-to-cart" onClick={() => addToCart(product)}>
+            <button className="add-to-cart" onClick={() => handleAddToCart(product)}>
               Tambah ke keranjang
             </button>
           </div>
@@ -102,7 +107,7 @@ const ProductDetail = () => {
                   </Link>
                   <button
                     className="add-to-cart"
-                    onClick={() => addToCart(prod)}
+                    onClick={() => handleAddToCart(prod)}
                   >
                     Add to Cart
                   </button>
