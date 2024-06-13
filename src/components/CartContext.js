@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
+import Swal from "sweetalert2";
 
 const CartContext = createContext();
 
@@ -37,6 +38,13 @@ export const CartProvider = ({ children }) => {
         return [...prevCart, { ...product, quantity: 1 }];
       }
     });
+
+    Swal.fire({
+      title: "Success!",
+      text: `${product.title} has been added to the cart.`,
+      icon: "success",
+      confirmButtonText: "OK",
+    });
   };
 
   const increaseQuantity = (id) => {
@@ -58,7 +66,20 @@ export const CartProvider = ({ children }) => {
   };
 
   const removeItem = (id) => {
-    setCart((prevCart) => prevCart.filter((item) => item.id !== id));
+    Swal.fire({
+      title: "Do you want to delete?",
+      showDenyButton: true,
+      showCancelButton: false,
+      confirmButtonText: "Delete",
+      denyButtonText: `Don't delete`,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        setCart((prevCart) => prevCart.filter((item) => item.id !== id));
+        Swal.fire("Deleted!", "", "success");
+      } else if (result.isDenied) {
+        Swal.fire("Changes are not saved", "", "info");
+      }
+    });
   };
 
   const calculateSubtotal = () => {

@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
+
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import BackToTopButton from "./BackToTopButton";
@@ -49,7 +50,6 @@ const ProductDetail = () => {
 
   const handleAddToCart = (product) => {
     addToCart(product);
-    alert(`${product.title} has been added to the cart.`);
   };
 
   if (!product || !availableProducts.length) {
@@ -72,7 +72,10 @@ const ProductDetail = () => {
             <p className="product-id">Product ID : {product.id}</p>
             <h1 className="product-name">{product.title}</h1>
             <p className="product-price">Harga : ${product.price}</p>
-            <button className="add-to-cart" onClick={() => handleAddToCart(product)}>
+            <button
+              className="add-to-cart"
+              onClick={() => handleAddToCart(product)}
+            >
               Tambah ke keranjang
             </button>
           </div>
