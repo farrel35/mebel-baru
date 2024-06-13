@@ -24,14 +24,40 @@ const Navbar = () => {
   // Deklarasikan state untuk pencarian dan hasil pencarian
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
+  const [allProducts, setAllProducts] = useState([]);
+
+  // Mengambil data produk dari API atau data lokal saat komponen dimount
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch("https://fakestoreapi.com/products");
+        const products = await response.json();
+        setAllProducts(products);
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      }
+    };
+
+    fetchProducts();
+  }, []);
 
   // Fungsi untuk menghandle perubahan input pencarian
   const handleSearchInputChange = (event) => {
     const query = event.target.value;
     setSearchQuery(query);
-
-    // Lakukan pencarian
   };
+
+  // Fungsi untuk melakukan pencarian berdasarkan searchQuery
+  useEffect(() => {
+    if (searchQuery) {
+      const results = allProducts.filter((product) =>
+        product.title.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+      setSearchResults(results);
+    } else {
+      setSearchResults([]);
+    }
+  }, [searchQuery, allProducts]);
 
   // Fungsi untuk merender item keranjang belanja
   const renderItems = () => {
