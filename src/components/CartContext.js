@@ -1,15 +1,27 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useState, useEffect } from "react";
 
 const CartContext = createContext();
 
 export const useCart = () => useContext(CartContext);
 
 export const CartProvider = ({ children }) => {
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(() => {
+    // Load cart from local storage on initial render
+    const savedCart = localStorage.getItem("cart");
+    return savedCart ? JSON.parse(savedCart) : [];
+  });
+
+  useEffect(() => {
+    // Save cart to local storage whenever it changes
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
 
   const addToCart = (product) => {
-    if (typeof product.price !== 'number' || isNaN(product.price)) {
-      console.error(`Invalid price for product with id ${product.id}:`, product.price); // Debugging: log invalid price
+    if (typeof product.price !== "number" || isNaN(product.price)) {
+      console.error(
+        `Invalid price for product with id ${product.id}:`,
+        product.price
+      ); // Debugging: log invalid price
       return;
     }
 
@@ -53,7 +65,7 @@ export const CartProvider = ({ children }) => {
     console.log(cart); // Debugging: log the cart items
 
     return cart.reduce((total, item) => {
-      if (typeof item.price !== 'number' || isNaN(item.price)) {
+      if (typeof item.price !== "number" || isNaN(item.price)) {
         console.error(`Invalid price for item with id ${item.id}:`, item.price); // Debugging: log invalid price
         return total;
       }
