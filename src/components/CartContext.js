@@ -8,6 +8,11 @@ export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
   const addToCart = (product) => {
+    if (typeof product.price !== 'number' || isNaN(product.price)) {
+      console.error(`Invalid price for product with id ${product.id}:`, product.price); // Debugging: log invalid price
+      return;
+    }
+
     setCart((prevCart) => {
       const existingProduct = prevCart.find((item) => item.id === product.id);
       if (existingProduct) {
@@ -45,7 +50,15 @@ export const CartProvider = ({ children }) => {
   };
 
   const calculateSubtotal = () => {
-    return cart.reduce((total, item) => total + item.price * item.quantity, 0);
+    console.log(cart); // Debugging: log the cart items
+
+    return cart.reduce((total, item) => {
+      if (typeof item.price !== 'number' || isNaN(item.price)) {
+        console.error(`Invalid price for item with id ${item.id}:`, item.price); // Debugging: log invalid price
+        return total;
+      }
+      return total + item.price * item.quantity;
+    }, 0);
   };
 
   return (
