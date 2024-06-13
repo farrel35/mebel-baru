@@ -17,7 +17,6 @@ export const CartProvider = ({ children }) => {
             : item
         );
       } else {
-        console.log(prevCart);
         return [...prevCart, { ...product, quantity: 1 }];
       }
     });
@@ -45,6 +44,10 @@ export const CartProvider = ({ children }) => {
     setCart((prevCart) => prevCart.filter((item) => item.id !== id));
   };
 
+  const calculateSubtotal = () => {
+    return cart.reduce((total, item) => total + item.price * item.quantity, 0);
+  };
+
   return (
     <CartContext.Provider
       value={{
@@ -53,6 +56,7 @@ export const CartProvider = ({ children }) => {
         increaseQuantity,
         decreaseQuantity,
         removeItem,
+        calculateSubtotal,
       }}
     >
       {children}

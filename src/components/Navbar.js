@@ -20,7 +20,7 @@ import "../css/Navbar.css";
 // Komponen Navbar
 const Navbar = () => {
   // Gunakan useCart untuk mengakses data keranjang belanja
-  const { cartItems, calculateSubtotal } = useCart();
+  const { cart, calculateSubtotal } = useCart();
   // Deklarasikan state untuk pencarian dan hasil pencarian
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
@@ -36,7 +36,7 @@ const Navbar = () => {
   // Fungsi untuk merender item keranjang belanja
   const renderItems = () => {
     // Jika tidak ada item dalam keranjang
-    if (!cartItems || cartItems.length === 0) {
+    if (!cart || cart.length === 0) {
       return (
         <li className="dropdown-item">
           <b>No items in cart</b>
@@ -47,8 +47,8 @@ const Navbar = () => {
     // Jika ada item dalam keranjang
     return (
       <>
-        {cartItems.map((item) => (
-          <li key={item.productId} className="dropdown-item">
+        {cart.map((item) => (
+          <li key={item.id} className="dropdown-item d-flex">
             <img
               src={item.image}
               alt={item.title}
@@ -59,17 +59,17 @@ const Navbar = () => {
             <div className="d-flex flex-column justify-content-between ms-3">
               <h6>{item.title}</h6>
               <p>
-                {item.quantity} x Rp {item.price}
+                {item.quantity} x $ {item.price}
               </p>
             </div>
           </li>
         ))}
         <li className="dropdown-item">
-          <b>Total</b>: Rp {calculateSubtotal()}
+          <b>Total</b>: $ {calculateSubtotal()}
         </li>
         <li className="dropdown-divider"></li>
         <li>
-          <Link to="/cart" className="dropdown-item">
+          <Link to="/cart" className="dropdown-item text-center">
             View Cart
           </Link>
         </li>
@@ -156,15 +156,20 @@ const Navbar = () => {
               <ul className="navbar-nav d-flex justify-content-center">
                 <li className="nav-item dropdown">
                   <a
-                    className="nav-link"
                     href="#"
+                    className="nav-link"
+                    id="cartDropdown"
                     role="button"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                   >
                     <FontAwesomeIcon icon={faCartShopping} />
+                    <span className="badge bg-danger">{cart.length}</span>
                   </a>
-                  <ul className="dropdown-menu dropdown-menu-lg-end">
+                  <ul
+                    className="dropdown-menu dropdown-menu-end"
+                    aria-labelledby="cartDropdown"
+                  >
                     {renderItems()}
                   </ul>
                 </li>
@@ -175,7 +180,7 @@ const Navbar = () => {
                       src={image3}
                       alt=""
                       className="brand-image img-circle elevation-3"
-                      styles={{
+                      style={{
                         opacity: 0.8,
                         width: "35px",
                         height: "35px",
@@ -197,7 +202,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li className="nav-item custom-submenu-item">
-            <Link to="/products" className="nav-link custom-submenu-link">
+            <Link to="/all-products" className="nav-link custom-submenu-link">
               Produk
             </Link>
           </li>
