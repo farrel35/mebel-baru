@@ -96,26 +96,30 @@ const ProductDetail = () => {
             >
               {"<"}
             </button>
-            <div className="product-cards">
-              {currentProducts.map((prod) => (
-                <div key={prod.id} className="product-card">
-                  <Link to={`/product/${prod.id}`}>
-                    <img
-                      src={prod.image}
-                      alt={prod.title}
-                      className="product-card-image"
-                    />
-                    <h3 className="product-card-title">{prod.title}</h3>
-                    <p className="product-card-price">${prod.price}</p>
-                  </Link>
-                  <button
-                    className="add-to-cart"
-                    onClick={() => handleAddToCart(prod)}
-                  >
-                    Add to Cart
-                  </button>
-                </div>
-              ))}
+            <div className="our-products-section product-cards">
+              <div className="row justify-content-center p-3">
+                {currentProducts.map((product) => (
+                  <div className="col-md-3" key={product.id}>
+                    <div className="card our-produk-card">
+                      <Link to={`/product/${product.id}`} className="card-link">
+                        <img
+                          src={product.image}
+                          className="card-img-top"
+                          alt={product.title}
+                        />
+                        <div className="card-body">
+                          <h5 className="card-title-allproduct">
+                            {product.title}
+                          </h5>
+                          <p className="card-text">
+                            <strong>${product.price}</strong>
+                          </p>
+                        </div>
+                      </Link>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
             <button
               className="slider-button next"

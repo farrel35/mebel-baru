@@ -26,7 +26,7 @@ const Body = () => {
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [currentPage] = useState(1);
-  const productsPerPage = 12;
+  const productsPerPage = 8;
 
   useEffect(() => {
     // Fetch products
