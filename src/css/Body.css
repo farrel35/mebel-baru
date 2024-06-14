@@ -504,6 +504,7 @@
 .accordion-button:not(.collapsed) {
   background-color: #294b29d8;
   color: #e8e5e5;
+  border-radius: 10px;
 }
 
 .accordion-button:focus {

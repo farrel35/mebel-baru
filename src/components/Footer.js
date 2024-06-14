@@ -33,7 +33,7 @@ const Footer = () => {
                     marginBottom: "15px",
                   }}
                 >
-                  <i>&quot;Moment Become Memories&quot; </i>
+                  <i>&quot;Sentuhan Indah untuk Rumah Anda.&quot; </i>
                 </p>
                 <p
                   style={{
@@ -57,7 +57,7 @@ const Footer = () => {
                     <a href="#">Home</a>
                   </li>
                   <li>
-                    <a href="#about-us">Tentang Kami</a>
+                    <a href="#hero">Tentang Kami</a>
                   </li>
                   <li>
                     <a href="#category">Kategori</a>

@@ -2,13 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faSackDollar,
-  faThumbsUp,
-  faHandshake,
-  faMedal,
-  faCircleCheck,
-} from "@fortawesome/free-solid-svg-icons";
+import { faSackDollar, faThumbsUp, faHandshake, faMedal, faCircleCheck } from "@fortawesome/free-solid-svg-icons";
 import "../css/Body.css";
 import heroImage from "../images/baru.png";
 
@@ -53,10 +47,7 @@ const Body = () => {
   // Get current products
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
-  const currentProducts = products.slice(
-    indexOfFirstProduct,
-    indexOfLastProduct
-  );
+  const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
 
   return (
     <>
@@ -95,39 +86,22 @@ const Body = () => {
             </div>
           </section> */}
 
-          <section class="hero">
+          <section id="hero" class="hero">
             <div class="hero-image">
               <img src={heroImage} alt="why chose us" />
             </div>
             <div class="hero-content">
               <h2>Kualitas Terbaik untuk Kebutuhan Furnitur Anda</h2>
-              <p>
-                {" "}
-                Kami mengutamakan kualitas dalam setiap produk furnitur kami.
-                Berikut adalah keunggulan produk kami dalam memenuhi kebutuhan
-                ruang Anda.
-              </p>
+              <p> Kami mengutamakan kualitas dalam setiap produk furnitur kami. Berikut adalah keunggulan produk kami dalam memenuhi kebutuhan ruang Anda.</p>
               <ul class="hero-features">
                 <li>
-                  <FontAwesomeIcon
-                    icon={faCircleCheck}
-                    style={{ color: "#294b29" }}
-                  />{" "}
-                  Desain Elegan dan Berkualitas Terbaik
+                  <FontAwesomeIcon icon={faCircleCheck} style={{ color: "#294b29" }} /> Desain Elegan dan Berkualitas Terbaik
                 </li>
                 <li>
-                  <FontAwesomeIcon
-                    icon={faCircleCheck}
-                    style={{ color: "#294b29" }}
-                  />{" "}
-                  Bahan Baku Berkualitas Tinggi dan Ramah Lingkungan
+                  <FontAwesomeIcon icon={faCircleCheck} style={{ color: "#294b29" }} /> Bahan Baku Berkualitas Tinggi dan Ramah Lingkungan
                 </li>
                 <li>
-                  <FontAwesomeIcon
-                    icon={faCircleCheck}
-                    style={{ color: "#294b29" }}
-                  />{" "}
-                  Jaminan Kepuasan Pelanggan Sepenuhnya
+                  <FontAwesomeIcon icon={faCircleCheck} style={{ color: "#294b29" }} /> Jaminan Kepuasan Pelanggan Sepenuhnya
                 </li>
               </ul>
               <Link to="/all-products" className="btn btn-hero">
@@ -145,59 +119,38 @@ const Body = () => {
                   <FontAwesomeIcon icon={faMedal} size="5x" className="m-4" />
 
                   <div className="card-body">
-                    <h5 className="card-title">Quality</h5>
-                    <p className="card-text">
-                      We provide high-quality products that are built to last.
-                    </p>
+                    <h5 className="card-title">Kualitas</h5>
+                    <p className="card-text">Kami menyediakan produk berkualitas tinggi.</p>
                   </div>
                 </div>
               </div>
               <div className="col-md-3">
                 <div className="card why-choose-us-card card-transition">
-                  <FontAwesomeIcon
-                    icon={faHandshake}
-                    size="5x"
-                    className="m-4"
-                  />
+                  <FontAwesomeIcon icon={faHandshake} size="5x" className="m-4" />
 
                   <div className="card-body">
-                    <h5 className="card-title">Service</h5>
-                    <p className="card-text">
-                      Our team is dedicated to providing excellent customer
-                      service.
-                    </p>
+                    <h5 className="card-title">Pelayanan</h5>
+                    <p className="card-text">Memberikan layanan pelanggan yang terbaik.</p>
                   </div>
                 </div>
               </div>
               <div className="col-md-3">
                 <div className="card why-choose-us-card card-transition">
-                  <FontAwesomeIcon
-                    icon={faThumbsUp}
-                    size="5x"
-                    className="m-4"
-                  />
+                  <FontAwesomeIcon icon={faThumbsUp} size="5x" className="m-4" />
 
                   <div className="card-body">
-                    <h5 className="card-title">Variety</h5>
-                    <p className="card-text">
-                      Choose from a wide range of options to suit your needs.
-                    </p>
+                    <h5 className="card-title">Variasi</h5>
+                    <p className="card-text">Berbagai pilihan yang sesuai dengan kebutuhan Anda</p>
                   </div>
                 </div>
               </div>
               <div className="col-md-3">
                 <div className="card why-choose-us-card card-transition">
-                  <FontAwesomeIcon
-                    icon={faSackDollar}
-                    size="5x"
-                    className="m-4"
-                  />
+                  <FontAwesomeIcon icon={faSackDollar} size="5x" className="m-4" />
 
                   <div className="card-body">
-                    <h5 className="card-title">Affordability</h5>
-                    <p className="card-text">
-                      Get great products at affordable prices.
-                    </p>
+                    <h5 className="card-title">Harga Terjangkau</h5>
+                    <p className="card-text">Dapatkan produk hebat dengan harga terjangkau.</p>
                   </div>
                 </div>
               </div>
@@ -214,9 +167,7 @@ const Body = () => {
                   <div className="card card-transition">
                     <Link to={`/category/${category}`}>
                       <img
-                        src={`https://fakestoreapi.com/img/category${
-                          index + 1
-                        }.jpg`} // Placeholder for category image
+                        src={`https://fakestoreapi.com/img/category${index + 1}.jpg`} // Placeholder for category image
                         className="card-img-top"
                         alt={category}
                       />
@@ -246,15 +197,9 @@ const Body = () => {
                 <div className="col-md-3 mb-5" key={product.id}>
                   <div className="card our-produk-card">
                     <Link to={`/product/${product.id}`} className="card-link">
-                      <img
-                        src={product.image}
-                        className="card-img-top"
-                        alt={product.title}
-                      />
+                      <img src={product.image} className="card-img-top" alt={product.title} />
                       <div className="card-body">
-                        <h5 className="card-title-allproduct">
-                          {product.title}
-                        </h5>
+                        <h5 className="card-title-allproduct">{product.title}</h5>
                         <p className="card-text">
                           <strong>${product.price}</strong>
                         </p>
@@ -268,7 +213,7 @@ const Body = () => {
         </div>
 
         {/* Sale */}
-        {/* <section id="sale" className="container-fluid"></section> */}
+        <section id="sale" className="container-fluid"></section>
 
         {/* Bagian Produk dengan navigasi */}
         {/* <section className="products-container container">
@@ -355,134 +300,55 @@ const Body = () => {
           <div className="accordion" id="faqAccordion">
             <div className="accordion-item">
               <h2 className="accordion-header" id="headingOne">
-                <button
-                  className="accordion-button"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseOne"
-                  aria-expanded="true"
-                  aria-controls="collapseOne"
-                >
+                <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                   Apa jenis bahan yang digunakan untuk produk furniture?
                 </button>
               </h2>
-              <div
-                id="collapseOne"
-                className="accordion-collapse collapse show"
-                aria-labelledby="headingOne"
-                data-bs-parent="#faqAccordion"
-              >
-                <div className="accordion-body">
-                  Kami menggunakan berbagai jenis bahan berkualitas tinggi
-                  termasuk kayu solid, kayu lapis, MDF, dan bahan ramah
-                  lingkungan lainnya untuk memastikan daya tahan dan keindahan
-                  produk.
-                </div>
+              <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                <div className="accordion-body">Kami menggunakan berbagai jenis bahan berkualitas tinggi termasuk kayu solid, kayu lapis, MDF, dan bahan ramah lingkungan lainnya untuk memastikan daya tahan dan keindahan produk.</div>
               </div>
             </div>
             <div className="accordion-item">
               <h2 className="accordion-header" id="headingTwo">
-                <button
-                  className="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseTwo"
-                  aria-expanded="false"
-                  aria-controls="collapseTwo"
-                >
+                <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                   Apa saja jenis furniture yang Anda jual?
                 </button>
               </h2>
-              <div
-                id="collapseTwo"
-                className="accordion-collapse collapse"
-                aria-labelledby="headingTwo"
-                data-bs-parent="#faqAccordion"
-              >
-                <div className="accordion-body">
-                  Kami menjual berbagai macam furniture untuk semua ruangan di
-                  rumah Anda
-                </div>
+              <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                <div className="accordion-body">Kami menjual berbagai macam furniture untuk semua ruangan di rumah Anda</div>
               </div>
             </div>
             <div className="accordion-item">
               <h2 className="accordion-header" id="headingThree">
-                <button
-                  className="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseThree"
-                  aria-expanded="false"
-                  aria-controls="collapseThree"
-                >
+                <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                   Bagaimana cara merawat produk furniture?
                 </button>
               </h2>
-              <div
-                id="collapseThree"
-                className="accordion-collapse collapse"
-                aria-labelledby="headingThree"
-                data-bs-parent="#faqAccordion"
-              >
+              <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
                 <div className="accordion-body">
-                  Untuk menjaga keindahan dan keawetan furniture, kami
-                  menyarankan untuk membersihkannya dengan kain lembut dan
-                  kering secara teratur dan menghindari penggunaan bahan kimia
-                  keras. Kami juga menyediakan panduan perawatan spesifik untuk
-                  setiap produk.
+                  Untuk menjaga keindahan dan keawetan furniture, kami menyarankan untuk membersihkannya dengan kain lembut dan kering secara teratur dan menghindari penggunaan bahan kimia keras. Kami juga menyediakan panduan perawatan
+                  spesifik untuk setiap produk.
                 </div>
               </div>
             </div>
             <div className="accordion-item">
               <h2 className="accordion-header" id="headingFour">
-                <button
-                  className="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseFour"
-                  aria-expanded="false"
-                  aria-controls="collapseFour"
-                >
+                <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                   Apakah Anda menawarkan layanan pengiriman?
                 </button>
               </h2>
-              <div
-                id="collapseFour"
-                className="accordion-collapse collapse"
-                aria-labelledby="headingFour"
-                data-bs-parent="#faqAccordion"
-              >
-                <div className="accordion-body">
-                  Ya, kami menawarkan layanan pengiriman ke seluruh Indonesia
-                  dengan biaya yang bervariasi tergantung lokasi. Kami juga
-                  menawarkan pengiriman gratis untuk pesanan di atas jumlah
-                  tertentu.
-                </div>
+              <div id="collapseFour" className="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                <div className="accordion-body">Ya, kami menawarkan layanan pengiriman ke seluruh Indonesia dengan biaya yang bervariasi tergantung lokasi. Kami juga menawarkan pengiriman gratis untuk pesanan di atas jumlah tertentu.</div>
               </div>
             </div>
             <div className="accordion-item">
               <h2 className="accordion-header" id="headingFive">
-                <button
-                  className="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseFive"
-                  aria-expanded="false"
-                  aria-controls="collapseFive"
-                >
+                <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                   Bagaimana cara saya melakukan pembayaran?
                 </button>
               </h2>
-              <div
-                id="collapseFive"
-                className="accordion-collapse collapse"
-                aria-labelledby="headingFive"
-                data-bs-parent="#faqAccordion"
-              >
-                <div className="accordion-body">
-                  Transfer bank: Anda dapat mentransfer pembayaran ke rekening
-                  bank kami.
-                </div>
+              <div id="collapseFive" className="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                <div className="accordion-body">Transfer bank: Anda dapat mentransfer pembayaran ke rekening bank kami.</div>
               </div>
             </div>
           </div>

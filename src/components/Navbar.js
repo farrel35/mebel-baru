@@ -143,9 +143,7 @@ const Navbar = () => {
                 <li className="nav-item dropdown">
                   <a href="#" className="nav-link" id="cartDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <FontAwesomeIcon icon={faCartShopping} />
-                    <span class="position-absolute top-5 translate-middle badge bg-danger navbar-badge">
-                      {cart.length}
-                    </span>
+                    <span class="position-absolute top-5 translate-middle badge bg-danger navbar-badge">{cart.length}</span>
                   </a>
                   <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="cartDropdown">
                     {renderItems()}
@@ -175,8 +173,8 @@ const Navbar = () => {
       <div className="navbar-submenu container-navbar mt-5 custom-navbar-submenu">
         <ul className="nav nav-pills justify-content-center">
           <li className="nav-item custom-submenu-item">
-            <a href="#about-us" className="nav-link custom-submenu-link">
-              About Us
+            <a href="#hero" className="nav-link custom-submenu-link">
+              Tentang Kami
             </a>
           </li>
           <li className="nav-item custom-submenu-item">
@@ -186,8 +184,13 @@ const Navbar = () => {
           </li>
           <li className="nav-item custom-submenu-item">
             <a href="#faq" className="nav-link custom-submenu-link">
-              FAQ
+              FAQS
             </a>
+          </li>
+          <li className="nav-item custom-submenu-item">
+            <Link to="/profile" className="nav-link custom-submenu-link">
+              Profile
+            </Link>
           </li>
         </ul>
       </div>
