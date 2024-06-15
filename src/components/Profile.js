@@ -2,12 +2,19 @@ import React, { useState } from "react";
 import "../css/Profile.css";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import EditPhoto from "./EditPhoto";
 
 const Profile = () => {
   const [modalOpen, setModalOpen] = useState(false);
+  const [profilePicture, setProfilePicture] = useState("https://via.placeholder.com/150");
 
   const openModal = () => setModalOpen(true);
   const closeModal = () => setModalOpen(false);
+
+  const handleUploadSuccess = (fileUrl) => {
+    setProfilePicture(fileUrl);
+    closeModal();
+  };
 
   return (
     <>
@@ -15,7 +22,7 @@ const Profile = () => {
       <div className="profile-container">
         <h1>Profil Pengguna</h1>
         <div className="profile-details">
-          <img src="https://via.placeholder.com/150" alt="Profile" className="profile-picture" />
+          <img src={profilePicture} alt="Profile" className="profile-picture" />
 
           <div className="profile-info">
             <p>
@@ -57,6 +64,7 @@ const Profile = () => {
                   <input type="text" name="address" defaultValue="Alamat Pengguna" />
                 </label>
                 <br />
+                <EditPhoto onUploadSuccess={handleUploadSuccess} />
                 <button type="submit" className="edit-button">
                   Simpan Perubahan
                 </button>
