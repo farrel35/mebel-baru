@@ -41,7 +41,7 @@ const Cart = () => {
           <div className="d-flex justify-content-between">
             <div className="d-flex flex-row align-items-center">
               <div>
-                <img src={item.image} className="cart-img-fluid rounded-3" alt="Shopping item" style={{ width: "65px" }} />
+                <img src={item.image} className="cart-img-fluid rounded-3" alt="Shopping item" style={{ width: "75px" }} />
               </div>
               <div className="ms-3">
                 <h5 className="cart-item-title">{item.title}</h5>
@@ -75,7 +75,7 @@ const Cart = () => {
   return (
     <>
       <Navbar />
-      <div className="container py-5 h-100 mt-5">
+      <div className="container py-5 h-100 mt-5 cart-container">
         <div className="row d-flex justify-content-center align-items-center h-100">
           <div className="col">
             <div className="cart-card">
