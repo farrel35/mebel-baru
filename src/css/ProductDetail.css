@@ -18,11 +18,6 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.main-product:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-}
-
 .product-image {
   width: 450px;
   height: 600px;
@@ -78,7 +73,7 @@
 
 .product-details .add-to-cart:hover {
   background-color: #1b301b;
-  transform: scale(1.05);
+  transform: scale(1.02);
 }
 
 .product-info {
@@ -90,11 +85,6 @@
   background-color: #fff;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.product-info:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
 .product-info .description {
@@ -226,7 +216,7 @@
 
 .product-card .add-to-cart:hover {
   background-color: #27ae60;
-  transform: scale(1.05);
+  transform: scale(0.5);
 }
 
 .product-card a {
