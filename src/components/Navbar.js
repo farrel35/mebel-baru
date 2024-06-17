@@ -1,17 +1,10 @@
-// Import useState dan useEffect dari React
 import React, { useState, useEffect } from "react";
-// Import Link dari react-router-dom
 import { Link } from "react-router-dom";
-// Import FontAwesomeIcon dari @fortawesome/react-fontawesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// Import ikon faCartShopping dan faMagnifyingGlass dari @fortawesome/free-solid-svg-icons
 import { faCartShopping, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-// Import useCart dari CartContext
 import { useCart } from "../components/CartContext";
-// Import gambar image3 dan logo
 import image3 from "../images/user3-128x128.jpg";
 import logo from "../images/logo.png";
-// Import CSS untuk Navbar
 import "../css/Navbar.css";
 
 // Komponen Navbar
@@ -118,28 +111,28 @@ const Navbar = () => {
               <button type="button" className="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div className="offcanvas-body">
-            <ul className="nav nav-pills justify-content-center">
-              <li className="nav-item custom-submenu-item">
-                <a href="#hero" className="nav-link custom-submenu-link">
-                  Tentang Kami
-                </a>
-              </li>
-              <li className="nav-item custom-submenu-item">
-                <Link to="/all-products" className="nav-link custom-submenu-link">
-                  Produk
-                </Link>
-              </li>
-              <li className="nav-item custom-submenu-item">
-                <a href="#faq" className="nav-link custom-submenu-link">
-                  FAQS
-                </a>
-              </li>
-              <li className="nav-item custom-submenu-item">
-                <Link to="/profile" className="nav-link custom-submenu-link">
-                  Profile
-                </Link>
-              </li>
-            </ul>
+              <ul className="nav nav-pills justify-content-center">
+                <li className="nav-item custom-submenu-item">
+                  <a href="#hero" className="nav-link custom-submenu-link">
+                    Tentang Kami
+                  </a>
+                </li>
+                <li className="nav-item custom-submenu-item">
+                  <Link to="/all-products" className="nav-link custom-submenu-link">
+                    Produk
+                  </Link>
+                </li>
+                <li className="nav-item custom-submenu-item">
+                  <a href="#faq" className="nav-link custom-submenu-link">
+                    FAQS
+                  </a>
+                </li>
+                <li className="nav-item custom-submenu-item">
+                  <Link to="/profile" className="nav-link custom-submenu-link">
+                    Profile
+                  </Link>
+                </li>
+              </ul>
               <div className="navbar-nav justify-content-center flex-grow-1 pe-3">
                 <form className="d-flex mt-3 mt-lg-0 mx-auto search-form position-relative" role="search">
                   <div className="input-group">

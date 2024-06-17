@@ -220,9 +220,14 @@
 .view-products-link {
   color: #007bff;
   text-decoration: none;
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 
+@media (max-width: 576px) {
+  .view-products-link {
+    font-size: 0.7rem;
+  }
+}
 .view-products-link:hover {
   text-decoration: underline;
 }
