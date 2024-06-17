@@ -72,10 +72,7 @@ const ProductDetail = () => {
             <p className="product-id">Product ID : {product.id}</p>
             <h1 className="product-name">{product.title}</h1>
             <p className="product-price">Harga : ${product.price}</p>
-            <button
-              className="add-to-cart"
-              onClick={() => handleAddToCart(product)}
-            >
+            <button className="add-to-cart" onClick={() => handleAddToCart(product)}>
               Tambah ke keranjang
             </button>
           </div>
@@ -89,11 +86,7 @@ const ProductDetail = () => {
         <div className="product-slider">
           <h2>Featured Products</h2>
           <div className="slider-container">
-            <button
-              className="slider-button prev"
-              onClick={() => handlePageChange("prev")}
-              disabled={currentPage === 1}
-            >
+            <button className="slider-button prev" onClick={() => handlePageChange("prev")} disabled={currentPage === 1}>
               {"<"}
             </button>
             <div className="our-products-section product-cards">
@@ -102,15 +95,9 @@ const ProductDetail = () => {
                   <div className="col-md-3" key={product.id}>
                     <div className="card our-produk-card">
                       <Link to={`/product/${product.id}`} className="card-link">
-                        <img
-                          src={product.image}
-                          className="card-img-top"
-                          alt={product.title}
-                        />
+                        <img src={product.image} className="card-img-top" alt={product.title} />
                         <div className="card-body">
-                          <h5 className="card-title-allproduct">
-                            {product.title}
-                          </h5>
+                          <h5 className="card-title-allproduct">{product.title}</h5>
                           <p className="card-text">
                             <strong>${product.price}</strong>
                           </p>
@@ -121,11 +108,7 @@ const ProductDetail = () => {
                 ))}
               </div>
             </div>
-            <button
-              className="slider-button next"
-              onClick={() => handlePageChange("next")}
-              disabled={currentPage === totalPages}
-            >
+            <button className="slider-button next" onClick={() => handlePageChange("next")} disabled={currentPage === totalPages}>
               {">"}
             </button>
           </div>

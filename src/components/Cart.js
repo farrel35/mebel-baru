@@ -80,7 +80,7 @@ const Cart = () => {
   return (
     <>
       <Navbar />
-      <div className="container py-5 h-100">
+      <div className="container py-5 h-100 mt-5">
         <div className="row d-flex justify-content-center align-items-center h-100">
           <div className="col">
             <div className="card">
