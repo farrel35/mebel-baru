@@ -75,6 +75,11 @@
   padding: 10px 0;
 }
 
+.nav-link {
+  text-decoration: none;
+  color: inherit;
+}
+
 .custom-navbar-submenu .nav-link {
   color: #ffffff;
   margin: 0 10px;

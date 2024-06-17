@@ -118,6 +118,28 @@ const Navbar = () => {
               <button type="button" className="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div className="offcanvas-body">
+            <ul className="nav nav-pills justify-content-center">
+              <li className="nav-item custom-submenu-item">
+                <a href="#hero" className="nav-link custom-submenu-link">
+                  Tentang Kami
+                </a>
+              </li>
+              <li className="nav-item custom-submenu-item">
+                <Link to="/all-products" className="nav-link custom-submenu-link">
+                  Produk
+                </Link>
+              </li>
+              <li className="nav-item custom-submenu-item">
+                <a href="#faq" className="nav-link custom-submenu-link">
+                  FAQS
+                </a>
+              </li>
+              <li className="nav-item custom-submenu-item">
+                <Link to="/profile" className="nav-link custom-submenu-link">
+                  Profile
+                </Link>
+              </li>
+            </ul>
               <div className="navbar-nav justify-content-center flex-grow-1 pe-3">
                 <form className="d-flex mt-3 mt-lg-0 mx-auto search-form position-relative" role="search">
                   <div className="input-group">
@@ -170,30 +192,6 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-      <div className="navbar-submenu container-navbar mt-5 custom-navbar-submenu">
-        <ul className="nav nav-pills justify-content-center">
-          <li className="nav-item custom-submenu-item">
-            <a href="#hero" className="nav-link custom-submenu-link">
-              Tentang Kami
-            </a>
-          </li>
-          <li className="nav-item custom-submenu-item">
-            <Link to="/all-products" className="nav-link custom-submenu-link">
-              Produk
-            </Link>
-          </li>
-          <li className="nav-item custom-submenu-item">
-            <a href="#faq" className="nav-link custom-submenu-link">
-              FAQS
-            </a>
-          </li>
-          <li className="nav-item custom-submenu-item">
-            <Link to="/profile" className="nav-link custom-submenu-link">
-              Profile
-            </Link>
-          </li>
-        </ul>
-      </div>
     </>
   );
 };
