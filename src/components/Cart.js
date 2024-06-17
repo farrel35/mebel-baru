@@ -1,4 +1,3 @@
-// src/components/Cart.js
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
@@ -37,37 +36,33 @@ const Cart = () => {
 
   const renderItems = () => {
     return cart.map((item) => (
-      <div key={item.id} className="card mb-3">
-        <div className="card-body">
+      <div key={item.id} className="cart-card mb-3">
+        <div className="cart-card-body">
           <div className="d-flex justify-content-between">
             <div className="d-flex flex-row align-items-center">
               <div>
-                <img src={item.image} className="img-fluid rounded-3" alt="Shopping item" style={{ width: "65px" }} />
+                <img src={item.image} className="cart-img-fluid rounded-3" alt="Shopping item" style={{ width: "65px" }} />
               </div>
               <div className="ms-3">
-                <h5>{item.title}</h5>
+                <h5 className="cart-item-title">{item.title}</h5>
                 <p className="small mb-0">Quantity: {item.quantity}</p>
               </div>
             </div>
             <div className="d-flex flex-row align-items-center">
-              <div style={{ width: "50px" }}>
-                <h5 className="fw-normal mb-0">
-                  <button onClick={() => decreaseQuantity(item.id)} className="btn btn-danger btn-sm">
-                    -
-                  </button>
-                </h5>
+              <div className="cart-btn-container">
+                <button onClick={() => decreaseQuantity(item.id)} className="btn cart-btn-danger cart-btn-responsive">
+                  -
+                </button>
               </div>
-              <div style={{ width: "50px" }}>
-                <h5 className="fw-normal mb-0">
-                  <button onClick={() => increaseQuantity(item.id)} className="btn btn-primary btn-sm">
-                    +
-                  </button>
-                </h5>
+              <div className="cart-btn-container">
+                <button onClick={() => increaseQuantity(item.id)} className="btn cart-btn-primary cart-btn-responsive">
+                  +
+                </button>
               </div>
-              <div style={{ width: "80px" }}>
-                <h5 className="mb-0">${item.price * item.quantity}</h5>
+              <div className="cart-price-container">
+                <h5 className="cart-price">${item.price * item.quantity}</h5>
               </div>
-              <a href="#!" style={{ color: "#cecece" }} onClick={() => removeItem(item.id)}>
+              <a href="#!" className="cart-remove-item" onClick={() => removeItem(item.id)}>
                 <i className="fas fa-trash-alt"></i>
               </a>
             </div>
@@ -80,15 +75,15 @@ const Cart = () => {
   return (
     <>
       <Navbar />
-      <div className="container py-5 h-100 mt-5">
+      <div className="container py-5 h-100 mt-5 cart-container">
         <div className="row d-flex justify-content-center align-items-center h-100">
           <div className="col">
-            <div className="card">
-              <div className="card-body p-4">
+            <div className="cart-card">
+              <div className="cart-card-body p-4">
                 <div className="row">
                   <div className="col-lg-7">
                     <h5 className="mb-3">
-                      <Link to="/" className="text-body a-none">
+                      <Link to="/" className="cart-text-body cart-a-none">
                         <i className="fas fa-long-arrow-alt-left me-2"></i>
                         Continue shopping
                       </Link>
@@ -106,8 +101,8 @@ const Cart = () => {
                   </div>
 
                   <div className="col-lg-5">
-                    <div className="card bg-green text-white rounded-3">
-                      <div className="card-body text-end">
+                    <div className="cart-card cart-bg-green text-white rounded-3 cart-sticky-shipping">
+                      <div className="cart-card-body text-end">
                         <div className="d-flex justify-content-between align-items-center mb-4">
                           <h5 className="mb-0">Shipping Details</h5>
                         </div>
@@ -127,7 +122,7 @@ const Cart = () => {
                               <option value="bank_transfer">Bank Transfer</option>
                             </select>
                           </div>
-                          <button type="submit" className="btn btn-success btn-block">
+                          <button type="submit" className="btn cart-btn-success btn-block">
                             Checkout
                           </button>
                         </form>
