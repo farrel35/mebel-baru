@@ -68,39 +68,8 @@
     width: auto;
   }
 }
-
-/* Styles for navbar submenu */
-.custom-navbar-submenu {
-  background-color: #294b29;
-  padding: 10px 0;
-}
-
-.nav-link {
-  text-decoration: none;
-  color: inherit;
-}
-
-.custom-navbar-submenu .nav-link {
-  color: #ffffff;
-  margin: 0 10px;
-}
-
-.custom-navbar-submenu .nav-link:hover {
-  color: #ffc107;
-  text-decoration: underline;
-}
-
-/* Additional styles for submenu items */
 .custom-submenu-item {
   margin-right: 20px;
-}
-
-.custom-submenu-link {
-  font-size: 1.2rem;
-}
-
-.custom-submenu-link:hover {
-  color: #ffc107;
 }
 
 .navbar-badge {
