@@ -536,6 +536,11 @@
   color: #343a40;
 }
 
+.faq-heading span.highlight-text {
+  color: #417541;
+  font-weight: 900; /* Ubah warna sesuai keinginan */
+}
+
 .faq-heading::before,
 .faq-heading::after {
   content: "";
@@ -552,6 +557,19 @@
 
 .faq-heading::after {
   right: 0;
+}
+
+.faq-subheading {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 1.2em;
+  color: #6c757d;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
 }
 
 .accordion-button {
@@ -611,8 +629,13 @@
   .accordion-body {
     padding: 15px;
   }
+
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
 }
-.a-product {
-  color: white;
-  text-decoration: none;
+
+.container-faq {
+  max-width: 95%;
+  margin-top: 50px;
 }
