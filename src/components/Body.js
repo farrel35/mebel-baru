@@ -5,7 +5,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSackDollar, faThumbsUp, faHandshake, faMedal, faCircleCheck } from "@fortawesome/free-solid-svg-icons";
 import "../css/Body.css";
 import heroImage from "../images/baru.png";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 const Body = () => {
   const productsWrapperRef = useRef(null);
 
@@ -42,6 +43,9 @@ const Body = () => {
       .catch((error) => {
         console.error("Error fetching the categories:", error);
       });
+    AOS.init({
+      duration: 1000,
+    });
   }, []);
 
   // Get current products
@@ -59,7 +63,7 @@ const Body = () => {
               <h2>
                 Our <span>Service</span>
               </h2>
-              <div className="col-md-3">
+              <div className="col-md-3" data-aos="fade-up">
                 <div className="card why-choose-us-card card-transition">
                   <div className="icon-wrapper mt-3">
                     <FontAwesomeIcon icon={faMedal} size="2x" className="icon" />
@@ -70,7 +74,7 @@ const Body = () => {
                   </div>
                 </div>
               </div>
-              <div className="col-md-3">
+              <div className="col-md-3" data-aos="fade-up" data-aos-delay="100">
                 <div className="card why-choose-us-card card-transition">
                   <div className="icon-wrapper mt-3">
                     <FontAwesomeIcon icon={faHandshake} size="2x" className="icon" />
@@ -81,7 +85,7 @@ const Body = () => {
                   </div>
                 </div>
               </div>
-              <div className="col-md-3">
+              <div className="col-md-3" data-aos="fade-up" data-aos-delay="200">
                 <div className="card why-choose-us-card card-transition">
                   <div className="icon-wrapper mt-3">
                     <FontAwesomeIcon icon={faThumbsUp} size="2x" className="icon" />
@@ -92,7 +96,7 @@ const Body = () => {
                   </div>
                 </div>
               </div>
-              <div className="col-md-3">
+              <div className="col-md-3" data-aos="fade-up" data-aos-delay="300">
                 <div className="card why-choose-us-card card-transition">
                   <div className="icon-wrapper mt-3">
                     <FontAwesomeIcon icon={faSackDollar} size="2x" className="icon" />
@@ -107,10 +111,10 @@ const Body = () => {
           </section>
         </div>
         <section id="hero" class="hero p-5">
-          <div class="hero-image">
+          <div class="hero-image" data-aos="zoom-in-up">
             <img src={heroImage} alt="why chose us" />
           </div>
-          <div class="hero-content">
+          <div class="hero-content " data-aos="zoom-in-down">
             <h2>
               {" "}
               <span>Kualitas Terbaik </span> untuk Kebutuhan Furnitur Anda
@@ -225,14 +229,14 @@ const Body = () => {
         <section id="sale" className="container-fluid"></section>
 
         {/* Bagian FAQ */}
-        <section id="faq" className="faq-section container container-faq   p-3">
+        <section id="faq" className="faq-section container container-faq p-3" data-aos="fade-up">
           <h1 className="faq-heading">
             Frequently Asked <span className="highlight-text">Question</span>
           </h1>
           <h5 className="faq-subheading">Berikut adalah beberapa pertanya terkait Mebelin Furniture</h5>
           <div className="faq-grid">
             <div className="accordion" id="faqAccordion">
-              <div className="accordion-item">
+              <div className="accordion-item" data-aos="flip-up">
                 <h2 className="accordion-header" id="headingOne">
                   <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                     Apa jenis bahan yang digunakan untuk produk furniture?
@@ -242,7 +246,7 @@ const Body = () => {
                   <div className="accordion-body">Kami menggunakan berbagai jenis bahan berkualitas tinggi termasuk kayu solid, kayu lapis, MDF, dan bahan ramah lingkungan lainnya untuk memastikan daya tahan dan keindahan produk.</div>
                 </div>
               </div>
-              <div className="accordion-item">
+              <div className="accordion-item" data-aos="flip-up">
                 <h2 className="accordion-header" id="headingTwo">
                   <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                     Apa saja jenis furniture yang Anda jual?
@@ -254,7 +258,7 @@ const Body = () => {
               </div>
             </div>
             <div className="accordion" id="faqAccordion2">
-              <div className="accordion-item">
+              <div className="accordion-item" data-aos="flip-up">
                 <h2 className="accordion-header" id="headingThree">
                   <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                     Bagaimana cara merawat produk furniture?
@@ -267,7 +271,7 @@ const Body = () => {
                   </div>
                 </div>
               </div>
-              <div className="accordion-item">
+              <div className="accordion-item" data-aos="flip-up">
                 <h2 className="accordion-header" id="headingFour">
                   <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                     Apakah Anda menawarkan layanan pengiriman?
