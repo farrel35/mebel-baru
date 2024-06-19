@@ -64,7 +64,7 @@
     max-width: 100%;
   }
 }
-.card-transition {
+/* .card-transition {
   transition: transform 0.3s ease;
   -webkit-transition: transform 0.3s ease;
   -moz-transition: transform 0.3s ease;
@@ -78,7 +78,7 @@
 
 .card-transition:hover {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-}
+} */
 /* WhyChooseUs.css */
 /* WhyChooseUs.css */
 
@@ -116,8 +116,9 @@
 }
 
 .why-choose-us-section .why-choose-us-card:hover {
-  transform: translateY(-10px); /* Menggeser kartu ke atas saat dihover */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Efek bayangan lebih besar saat dihover */
+  transform: translateY(-10px);
+  scale: 1.03;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .why-choose-us-section .why-choose-us-card .icon-wrapper {
@@ -170,7 +171,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 2rem;
-  background-color: #e1ffdc;
+  background-color: #d8ead5c1;
 }
 
 .hero-image {
