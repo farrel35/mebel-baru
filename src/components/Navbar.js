@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCartShopping,
@@ -141,9 +142,9 @@ const Navbar = () => {
             <div className="offcanvas-body">
               <ul className="nav navbar-nav justify-content-center">
                 <li className="nav-item custom-submenu-item">
-                  <a href="#hero" className="nav-link">
+                  <HashLink to="/#hero" className="nav-link">
                     Tentang Kami
-                  </a>
+                  </HashLink>
                 </li>
                 <li className="nav-item custom-submenu-item">
                   <Link to="/all-products" className="nav-link">
@@ -151,9 +152,9 @@ const Navbar = () => {
                   </Link>
                 </li>
                 <li className="nav-item custom-submenu-item">
-                  <a href="#faq" className="nav-link">
+                  <HashLink to="/#faq" className="nav-link">
                     FAQS
-                  </a>
+                  </HashLink>
                 </li>
                 {/* <li className="nav-item custom-submenu-item">
                   <Link to="/profile" className="nav-link">
