@@ -12,12 +12,14 @@ import "../css/Navbar.css";
 
 // Komponen Navbar
 const Navbar = () => {
+  // Gunakan useCart untuk mengakses data keranjang belanja
   const { cart, calculateSubtotal } = useCart();
+  // Deklarasikan state untuk pencarian dan hasil pencarian
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [allProducts, setAllProducts] = useState([]);
-  const [navbarBg, setNavbarBg] = useState(false);
 
+  // Mengambil data produk dari API atau data lokal saat komponen dimount
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -32,6 +34,13 @@ const Navbar = () => {
     fetchProducts();
   }, []);
 
+  // Fungsi untuk menghandle perubahan input pencarian
+  const handleSearchInputChange = (event) => {
+    const query = event.target.value;
+    setSearchQuery(query);
+  };
+
+  // Fungsi untuk melakukan pencarian berdasarkan searchQuery
   useEffect(() => {
     if (searchQuery) {
       const results = allProducts.filter((product) =>
@@ -43,12 +52,9 @@ const Navbar = () => {
     }
   }, [searchQuery, allProducts]);
 
-  const handleSearchInputChange = (event) => {
-    const query = event.target.value;
-    setSearchQuery(query);
-  };
-
+  // Fungsi untuk merender item keranjang belanja
   const renderItems = () => {
+    // Jika tidak ada item dalam keranjang
     if (!cart || cart.length === 0) {
       return (
         <li className="dropdown-item">
@@ -57,6 +63,7 @@ const Navbar = () => {
       );
     }
 
+    // Jika ada item dalam keranjang
     return (
       <>
         {cart.map((item) => (
@@ -89,28 +96,10 @@ const Navbar = () => {
     );
   };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setNavbarBg(true);
-      } else {
-        setNavbarBg(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
+  // Return navbar
   return (
     <>
-      <nav
-        className={`navbar navbar-expand-lg fixed-top ${
-          navbarBg ? "navbar-scrolled" : ""
-        }`}
-      >
+      <nav className="navbar navbar-expand-lg navbar-dark fixed-top">
         <div className="container">
           <Link to="/" className="navbar-brand">
             <img
@@ -151,51 +140,31 @@ const Navbar = () => {
             </div>
             <div className="offcanvas-body">
               <ul className="nav navbar-nav justify-content-center">
-                <li
-                  className={`nav-item custom-submenu-item ${
-                    navbarBg ? "" : "submenu-unscrolled"
-                  }`}
-                >
+                <li className="nav-item custom-submenu-item">
                   <a href="#hero" className="nav-link">
                     Tentang Kami
                   </a>
                 </li>
-                <li
-                  className={`nav-item custom-submenu-item ${
-                    navbarBg ? "" : "submenu-unscrolled"
-                  }`}
-                >
+                <li className="nav-item custom-submenu-item">
                   <Link to="/all-products" className="nav-link">
                     Produk
                   </Link>
                 </li>
-                <li
-                  className={`nav-item custom-submenu-item ${
-                    navbarBg ? "" : "submenu-unscrolled"
-                  }`}
-                >
+                <li className="nav-item custom-submenu-item">
                   <a href="#faq" className="nav-link">
                     FAQS
                   </a>
                 </li>
-                <li
-                  className={`nav-item custom-submenu-item ${
-                    navbarBg ? "" : "submenu-unscrolled"
-                  }`}
-                >
+                {/* <li className="nav-item custom-submenu-item">
                   <Link to="/profile" className="nav-link">
                     Profile
                   </Link>
                 </li>
-                <li
-                  className={`nav-item custom-submenu-item ${
-                    navbarBg ? "" : "submenu-unscrolled"
-                  }`}
-                >
+                <li className="nav-item custom-submenu-item">
                   <Link to="/admin" className="nav-link">
                     admin
                   </Link>
-                </li>
+                </li> */}
               </ul>
               <div className="nav navbar-nav justify-content-center flex-grow-1 pe-3">
                 <div className="container fluid">
@@ -233,11 +202,7 @@ const Navbar = () => {
                 </div>
               </div>
               <ul className="nav navbar-nav d-flex justify-content-center">
-                <li
-                  className={`nav-item dropdown ${
-                    navbarBg ? "" : "submenu-unscrolled"
-                  }`}
-                >
+                <li className="nav-item dropdown">
                   <a
                     href="#"
                     className="nav-link"
@@ -247,7 +212,7 @@ const Navbar = () => {
                     aria-expanded="false"
                   >
                     <FontAwesomeIcon icon={faCartShopping} />
-                    <span className="position-absolute top-5 translate-middle badge bg-danger navbar-badge">
+                    <span class="position-absolute top-5 translate-middle badge bg-danger navbar-badge">
                       {cart.length}
                     </span>
                   </a>
