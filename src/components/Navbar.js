@@ -263,9 +263,9 @@ const Navbar = () => {
                   </ul>
                 </li>
                 <li className="nav-item dropdown">
-                  <Link to="/login" className="nav-link">
-                    <span className="brand-text font-weight-light">Login</span>
-                    <img
+                  <Link to="/login">
+                    <button className="btn btn-success btn-login">Login</button>
+                    {/*<img
                       src={image3}
                       alt=""
                       className="brand-image img-circle elevation-3"
@@ -275,7 +275,7 @@ const Navbar = () => {
                         height: "35px",
                         objectFit: "cover",
                       }}
-                    />
+                    />*/}
                   </Link>
                 </li>
               </ul>

@@ -75,3 +75,7 @@
 .navbar-badge {
   padding: 2px 4px;
 }
+
+.btn.btn-login {
+  margin-left: 10px;
+}

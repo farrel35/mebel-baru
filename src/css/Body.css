@@ -96,7 +96,7 @@
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 3rem;
-  color: #437943; /* Warna teks untuk judul */
+  color: #85cc85; /* Warna teks untuk judul */
 }
 .why-choose-us-section .row {
   display: flex;
@@ -150,7 +150,7 @@
 }
 
 .why-choose-us-section .why-choose-us-card .card-text {
-  font-size: 1.2rem; /* Ukuran font sedikit lebih besar untuk teks kartu */
+  font-size: medium; /* Ukuran font sedikit lebih besar untuk teks kartu */
   color: #333; /* Warna untuk teks kartu */
 }
 
@@ -163,7 +163,17 @@
     margin-bottom: 2rem; /* Margin bawah lebih besar */
   }
 }
+@media (max-width: 810px) {
+  .why-choose-us-section .row {
+    flex-direction: row; /* Tata letak vertikal untuk kartu pada layar tablet */
+    align-items: center; /* Pusatkan kartu pada layar tablet */
+  }
 
+  .why-choose-us-section .why-choose-us-card {
+    width: 100%;
+    margin-bottom: 2rem; /* Margin bawah lebih besar */
+  }
+}
 /* hero css */
 .hero {
   display: flex;
@@ -258,7 +268,69 @@
 }
 
 .hero-content h2 span {
-  color: #294b29; /* Warna untuk kata "Kualitas" */
+  color: #85cc85; /* Warna untuk kata "Kualitas" */
+}
+
+#section-banner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Adjust the gap value to set the space between banners */
+}
+
+.mebel-banner {
+  padding: 10px 10px;
+  color: black;
+  border-radius: 10px; /* Ensure border-radius is applied to .mebel-banner */
+  overflow: hidden; /* Ensure content within respects the border-radius */
+  margin: 40px 0; /* Add vertical margin to create space between banners */
+}
+
+.mebel-banner-1 {
+  background: url("../images/design2.png") no-repeat;
+  background-size: cover; /* Make sure the image covers the element */
+  background-position: center; /* Center the background image */
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+.mebel-banner-2 {
+  background: url("../images/design1.png") no-repeat;
+  background-size: cover; /* Make sure the image covers the element */
+  background-position: center; /* Center the background image */
+  border-radius: 10px;
+}
+
+.mebel-banner .title {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.mebel-banner .discount-text {
+  margin-bottom: 4rem;
+}
+
+.mebel-banner .discount-text .discount {
+  font-weight: bold;
+}
+
+.mebel-banner .shop-now-btn {
+  background-color: dark;
+  color: white;
+}
+
+.shop-now-btn {
+  background-color: #697d74;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline-block;
+  transition: background-color 0.3s;
+}
+
+.shop-now-btn:hover {
+  background-color: #294b29;
+  color: white;
 }
 
 /* OurProducts.css */
@@ -268,7 +340,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 3rem 0 3rem 0;
+  margin: 3rem 0;
 }
 
 .our-products-header h1 {
@@ -282,18 +354,48 @@
   font-size: 1rem;
 }
 
+.view-products-link:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 576px) {
   .view-products-link {
     font-size: 0.7rem;
   }
 }
-.view-products-link:hover {
-  text-decoration: underline;
+@media (max-width: 810px) {
+  /* Mengatur agar kartu produk menampilkan 3 barang per baris */
+  .our-products-section .row {
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .our-products-section .col-md-3 {
+    flex-basis: calc(
+      33.33% - 20px
+    ); /* Lebar kartu produk diatur agar ada ruang di antara mereka */
+    margin-bottom: 20px;
+  }
+
+  .our-products-section .our-produk-card {
+    max-width: 100%; /* Kartu produk mengisi lebar maksimum */
+  }
+
+  .card-footer {
+    gap: 15px;
+  }
 }
 
-/* Gaya khusus untuk kartu produk pada bagian Our Products */
-.our-products-section .our-produk-card {
-  position: relative; /* Tambahkan ini untuk pseudo-elemen */
+/* Media Query untuk handphone */
+@media (max-width: 576px) {
+  .our-products-header {
+    margin: 1.5rem 0;
+  }
+  .view-products-link {
+    font-size: 0.8rem;
+  }
+}
+.our-produk-card {
   border-radius: 8px;
   overflow: hidden;
   background-color: #ffffff;
@@ -306,13 +408,12 @@
   padding: 20px;
 }
 
-.our-products-section .our-produk-card:hover {
+.our-produk-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Gaya untuk gambar di dalam kartu produk */
-.our-products-section .our-produk-card .card-img-top {
+.card-img-top {
   width: 100%;
   height: 150px;
   max-width: 100%;
@@ -321,48 +422,58 @@
   margin: auto;
 }
 
-/* Gaya untuk judul dan teks di dalam kartu produk */
-.our-products-section .our-produk-card .card-body {
+.card-body-product {
   text-align: center;
   padding: 1rem;
   flex-grow: 1;
 }
-.our-products-section .our-produk-card .card-link {
+
+.card-link {
   text-decoration: none;
   color: black;
 }
-.our-products-section .our-produk-card .card-title {
+
+.card-title {
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
 }
 
-.our-products-section .our-produk-card .card-text {
+.card-category-product {
   font-size: 1rem;
   color: #333333;
   margin-top: auto;
 }
 
-/* Gaya hover untuk kartu produk */
-.our-products-section .our-produk-card::after {
-  content: "Lihat Produk";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: #294b29b3;
-  color: #ffffff;
-  text-align: center;
-  padding: 10px 0;
-  font-size: 1rem;
-  opacity: 0;
-  transform: translateY(100%);
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  pointer-events: none;
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
 }
 
-.our-products-section .our-produk-card:hover::after {
-  opacity: 1;
-  transform: translateY(0);
+.card-price {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.card-actions {
+  display: flex;
+  align-items: center;
+}
+
+.add-to-cart-btn {
+  background-color: #294b29;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #697d74;
+  color: white;
 }
 
 /* sale */
@@ -538,26 +649,8 @@
 }
 
 .faq-heading span.highlight-text {
-  color: #417541;
+  color: #85cc85;
   font-weight: 900; /* Ubah warna sesuai keinginan */
-}
-
-.faq-heading::before,
-.faq-heading::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  width: 30%;
-  height: 2px;
-  background-color: #dee2e6;
-}
-
-.faq-heading::before {
-  left: 0;
-}
-
-.faq-heading::after {
-  right: 0;
 }
 
 .faq-subheading {

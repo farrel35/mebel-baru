@@ -13,21 +13,18 @@ import "../css/Body.css";
 import heroImage from "../images/baru.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useCart } from "../components/CartContext";
+
 const Body = () => {
-  const productsWrapperRef = useRef(null);
-
-  const scrollLeft = () => {
-    productsWrapperRef.current.scrollLeft -= 300;
-  };
-
-  const scrollRight = () => {
-    productsWrapperRef.current.scrollLeft += 300;
-  };
-
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [currentPage] = useState(1);
   const productsPerPage = 8;
+
+  const { addToCart } = useCart();
+  const handleAddToCart = (product) => {
+    addToCart(product);
+  };
 
   useEffect(() => {
     // Fetch products
@@ -69,75 +66,89 @@ const Body = () => {
         <div className="container container-home">
           {/* Bagian Why Choose Us */}
           <section id="why-choose-us" className="why-choose-us-section">
-            <div className="row">
-              <h2>
-                Our <span>Service</span>
-              </h2>
-              <div className="col-md-3" data-aos="fade-up">
-                <div className="card why-choose-us-card card-transition">
-                  <div className="icon-wrapper mt-3">
-                    <FontAwesomeIcon
-                      icon={faMedal}
-                      size="2x"
-                      className="icon"
-                    />
-                  </div>
-                  <div className="card-body">
-                    <h5 className="card-title">Kualitas</h5>
-                    <p className="card-text">
-                      Kami menyediakan produk berkualitas tinggi.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-md-3" data-aos="fade-up" data-aos-delay="100">
-                <div className="card why-choose-us-card card-transition">
-                  <div className="icon-wrapper mt-3">
-                    <FontAwesomeIcon
-                      icon={faHandshake}
-                      size="2x"
-                      className="icon"
-                    />
-                  </div>
-                  <div className="card-body">
-                    <h5 className="card-title">Pelayanan</h5>
-                    <p className="card-text">
-                      Memberikan layanan pelanggan yang terbaik.
-                    </p>
+            <div className="container">
+              <div className="row">
+                <h2>
+                  Our <span>Service</span>
+                </h2>
+                <div className="col-md-3" data-aos="fade-up">
+                  <div className="card why-choose-us-card card-transition">
+                    <div className="icon-wrapper mt-3">
+                      <FontAwesomeIcon
+                        icon={faMedal}
+                        size="2x"
+                        className="icon"
+                      />
+                    </div>
+                    <div className="card-body">
+                      <h5 className="card-title">Kualitas</h5>
+                      <p className="card-text">
+                        Kami menyediakan produk berkualitas tinggi.
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="col-md-3" data-aos="fade-up" data-aos-delay="200">
-                <div className="card why-choose-us-card card-transition">
-                  <div className="icon-wrapper mt-3">
-                    <FontAwesomeIcon
-                      icon={faThumbsUp}
-                      size="2x"
-                      className="icon"
-                    />
-                  </div>
-                  <div className="card-body">
-                    <h5 className="card-title">Variasi</h5>
-                    <p className="card-text">
-                      Berbagai pilihan yang sesuai dengan kebutuhan Anda.
-                    </p>
+                <div
+                  className="col-md-3"
+                  data-aos="fade-up"
+                  data-aos-delay="50"
+                >
+                  <div className="card why-choose-us-card card-transition">
+                    <div className="icon-wrapper mt-3">
+                      <FontAwesomeIcon
+                        icon={faHandshake}
+                        size="2x"
+                        className="icon"
+                      />
+                    </div>
+                    <div className="card-body">
+                      <h5 className="card-title">Pelayanan</h5>
+                      <p className="card-text">
+                        Memberikan layanan pelanggan yang terbaik.
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="col-md-3" data-aos="fade-up" data-aos-delay="300">
-                <div className="card why-choose-us-card card-transition">
-                  <div className="icon-wrapper mt-3">
-                    <FontAwesomeIcon
-                      icon={faSackDollar}
-                      size="2x"
-                      className="icon"
-                    />
+                <div
+                  className="col-md-3"
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                >
+                  <div className="card why-choose-us-card card-transition">
+                    <div className="icon-wrapper mt-3">
+                      <FontAwesomeIcon
+                        icon={faThumbsUp}
+                        size="2x"
+                        className="icon"
+                      />
+                    </div>
+                    <div className="card-body">
+                      <h5 className="card-title">Variasi</h5>
+                      <p className="card-text">
+                        Berbagai pilihan yang sesuai dengan kebutuhan Anda.
+                      </p>
+                    </div>
                   </div>
-                  <div className="card-body">
-                    <h5 className="card-title">Harga Terjangkau</h5>
-                    <p className="card-text">
-                      Dapatkan produk hebat dengan harga terjangkau.
-                    </p>
+                </div>
+                <div
+                  className="col-md-3"
+                  data-aos="fade-up"
+                  data-aos-delay="150"
+                >
+                  <div className="card why-choose-us-card card-transition">
+                    <div className="icon-wrapper mt-3">
+                      <FontAwesomeIcon
+                        icon={faSackDollar}
+                        size="2x"
+                        className="icon"
+                      />
+                    </div>
+                    <div className="card-body">
+                      <h5 className="card-title">Harga Terjangkau</h5>
+                      <p className="card-text">
+                        Dapatkan produk hebat dengan harga terjangkau.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -220,199 +231,243 @@ const Body = () => {
               </div>
             </div>
           </section> */}
+          <section id="section-banner">
+            <div className="container">
+              <div className="row">
+                <div className="col-12 col-md-6 mb-3 mb-lg-0">
+                  <div className="mebel-banner mebel-banner-1">
+                    <h3 className="title">Fruits & Vegetables</h3>
+                    <p className="discount-text">
+                      Get Up to
+                      <span className="discount"> 30% </span>
+                      Off
+                    </p>
+                    <Link to="/all-products/" className="btn shop-now-btn">
+                      Shop Now
+                    </Link>
+                  </div>
+                </div>
+                <div className="col-12 col-md-6">
+                  <div className="mebel-banner mebel-banner-2">
+                    <h3 className="title">Freshly Baked Buns</h3>
+                    <p className="discount-text">
+                      Get Up to
+                      <span className="discount"> 25% </span>
+                      Off
+                    </p>
+                    <Link to="/all-products/" className="btn shop-now-btn">
+                      Shop Now
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
 
           {/* Bagian Kategori */}
           <section id="category">
-            {/* <hr /> */}
-            <h1 className="h1-center">Kategori</h1>
-            <div className="row">
-              {categories.map((category, index) => (
-                <div className="col-md-3" key={index}>
-                  <div className="card card-transition">
-                    <Link to={`/category/${category}`}>
-                      <img
-                        src={`https://fakestoreapi.com/img/category${
-                          index + 1
-                        }.jpg`} // Placeholder for category image
-                        className="card-img-top"
-                        alt={category}
-                      />
-                    </Link>
-                    <div className="card-body">
-                      <h5 className="card-title">{category}</h5>
-                      <p className="card-text">Description of {category}.</p>
+            <div className="container">
+              {/* <hr /> */}
+              <h1 className="h1-center">Kategori</h1>
+              <div className="row">
+                {categories.map((category, index) => (
+                  <div className="col-md-3" key={index}>
+                    <div className="card card-transition">
+                      <Link to={`/category/${category}`}>
+                        <img
+                          src={`https://fakestoreapi.com/img/category${
+                            index + 1
+                          }.jpg`} // Placeholder for category image
+                          className="card-img-top"
+                          alt={category}
+                        />
+                      </Link>
+                      <div className="card-body">
+                        <h5 className="card-title">{category}</h5>
+                        <p className="card-text">Description of {category}.</p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
+              {/* <hr /> */}
             </div>
-            {/* <hr /> */}
           </section>
 
           {/* Bagian Our Products */}
           <section id="our-products" className="our-products-section">
-            <div className="our-products-header">
-              <h1 className="h1-product">Produk Kami</h1>
-
-              <Link to="/all-products" className="view-products-link">
-                Lihat Semua Produk →
-              </Link>
-            </div>
-            <div className="row">
-              {currentProducts.map((product) => (
-                <div className="col-md-3 mb-5" key={product.id}>
-                  <div className="card our-produk-card">
-                    <Link to={`/product/${product.id}`} className="card-link">
-                      <img
-                        src={product.image}
-                        className="card-img-top"
-                        alt={product.title}
-                      />
-                      <div className="card-body">
-                        <h5 className="card-title-allproduct">
-                          {product.title}
-                        </h5>
-                        <p className="card-text">
+            <div className="container">
+              <div className="our-products-header">
+                <h1 className="h1-product">Produk Kami</h1>
+                <Link to="/all-products" className="view-products-link">
+                  Lihat Semua Produk →
+                </Link>
+              </div>
+              <div className="row">
+                {currentProducts.map((product) => (
+                  <div className="col-md-3 mb-5" key={product.id}>
+                    <div className="card our-produk-card">
+                      <Link to={`/product/${product.id}`} className="card-link">
+                        <img
+                          src={product.image}
+                          className="card-img-top"
+                          alt={product.title}
+                        />
+                        <div className="card-body-product">
+                          <p className="card-category-product">
+                            {product.category}
+                          </p>
+                          <h5 className="card-title">{product.title}</h5>
+                        </div>
+                      </Link>
+                      <div className="card-footer">
+                        <div className="card-price">
                           <strong>${product.price}</strong>
-                        </p>
+                        </div>
+                        <div className="card-actions">
+                          <button
+                            className="btn add-to-cart-btn"
+                            onClick={() => handleAddToCart(product)}
+                          >
+                            + Cart
+                          </button>
+                        </div>
                       </div>
-                    </Link>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </section>
         </div>
 
         {/* Sale */}
-        <section id="sale" className="container-fluid"></section>
+        {/* <section id="sale" className="container-fluid"></section> */}
 
         {/* Bagian FAQ */}
-        <section
-          id="faq"
-          className="faq-section container container-faq p-3"
-          data-aos="fade-up"
-        >
-          <h1 className="faq-heading">
-            Frequently Asked <span className="highlight-text">Question</span>
-          </h1>
-          <h5 className="faq-subheading">
-            Berikut adalah beberapa pertanya terkait Mebelin Furniture
-          </h5>
-          <div className="faq-grid">
-            <div className="accordion" id="faqAccordion">
-              <div className="accordion-item" data-aos="flip-up">
-                <h2 className="accordion-header" id="headingOne">
-                  <button
-                    className="accordion-button"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapseOne"
-                    aria-expanded="true"
-                    aria-controls="collapseOne"
+        <div className="container">
+          <section id="faq" className="faq-section" data-aos="fade-up">
+            <h1 className="faq-heading">
+              Frequently Asked <span className="highlight-text">Question</span>
+            </h1>
+            <h5 className="faq-subheading">
+              Berikut adalah beberapa pertanya terkait Mebelin Furniture
+            </h5>
+            <div className="faq-grid">
+              <div className="accordion" id="faqAccordion">
+                <div className="accordion-item" data-aos="flip-up">
+                  <h2 className="accordion-header" id="headingOne">
+                    <button
+                      className="accordion-button"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseOne"
+                      aria-expanded="true"
+                      aria-controls="collapseOne"
+                    >
+                      Apa jenis bahan yang digunakan untuk produk furniture?
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseOne"
+                    className="accordion-collapse collapse show"
+                    aria-labelledby="headingOne"
+                    data-bs-parent="#faqAccordion"
                   >
-                    Apa jenis bahan yang digunakan untuk produk furniture?
-                  </button>
-                </h2>
-                <div
-                  id="collapseOne"
-                  className="accordion-collapse collapse show"
-                  aria-labelledby="headingOne"
-                  data-bs-parent="#faqAccordion"
-                >
-                  <div className="accordion-body">
-                    Kami menggunakan berbagai jenis bahan berkualitas tinggi
-                    termasuk kayu solid, kayu lapis, MDF, dan bahan ramah
-                    lingkungan lainnya untuk memastikan daya tahan dan keindahan
-                    produk.
+                    <div className="accordion-body">
+                      Kami menggunakan berbagai jenis bahan berkualitas tinggi
+                      termasuk kayu solid, kayu lapis, MDF, dan bahan ramah
+                      lingkungan lainnya untuk memastikan daya tahan dan
+                      keindahan produk.
+                    </div>
+                  </div>
+                </div>
+                <div className="accordion-item" data-aos="flip-up">
+                  <h2 className="accordion-header" id="headingTwo">
+                    <button
+                      className="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseTwo"
+                      aria-expanded="false"
+                      aria-controls="collapseTwo"
+                    >
+                      Apa saja jenis furniture yang Anda jual?
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseTwo"
+                    className="accordion-collapse collapse"
+                    aria-labelledby="headingTwo"
+                    data-bs-parent="#faqAccordion"
+                  >
+                    <div className="accordion-body">
+                      Kami menjual berbagai macam furniture untuk semua ruangan
+                      di rumah Anda
+                    </div>
                   </div>
                 </div>
               </div>
-              <div className="accordion-item" data-aos="flip-up">
-                <h2 className="accordion-header" id="headingTwo">
-                  <button
-                    className="accordion-button collapsed"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapseTwo"
-                    aria-expanded="false"
-                    aria-controls="collapseTwo"
+              <div className="accordion" id="faqAccordion2">
+                <div className="accordion-item" data-aos="flip-up">
+                  <h2 className="accordion-header" id="headingThree">
+                    <button
+                      className="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseThree"
+                      aria-expanded="false"
+                      aria-controls="collapseThree"
+                    >
+                      Bagaimana cara merawat produk furniture?
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseThree"
+                    className="accordion-collapse collapse"
+                    aria-labelledby="headingThree"
+                    data-bs-parent="#faqAccordion2"
                   >
-                    Apa saja jenis furniture yang Anda jual?
-                  </button>
-                </h2>
-                <div
-                  id="collapseTwo"
-                  className="accordion-collapse collapse"
-                  aria-labelledby="headingTwo"
-                  data-bs-parent="#faqAccordion"
-                >
-                  <div className="accordion-body">
-                    Kami menjual berbagai macam furniture untuk semua ruangan di
-                    rumah Anda
+                    <div className="accordion-body">
+                      Untuk menjaga keindahan dan keawetan furniture, kami
+                      menyarankan untuk membersihkannya dengan kain lembut dan
+                      kering secara teratur dan menghindari penggunaan bahan
+                      kimia keras. Kami juga menyediakan panduan perawatan
+                      spesifik untuk setiap produk.
+                    </div>
+                  </div>
+                </div>
+                <div className="accordion-item" data-aos="flip-up">
+                  <h2 className="accordion-header" id="headingFour">
+                    <button
+                      className="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseFour"
+                      aria-expanded="false"
+                      aria-controls="collapseFour"
+                    >
+                      Apakah Anda menawarkan layanan pengiriman?
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseFour"
+                    className="accordion-collapse collapse"
+                    aria-labelledby="headingFour"
+                    data-bs-parent="#faqAccordion2"
+                  >
+                    <div className="accordion-body">
+                      Ya, kami menawarkan layanan pengiriman ke seluruh
+                      Indonesia dengan biaya yang bervariasi tergantung lokasi.
+                      Kami juga menawarkan pengiriman gratis untuk pesanan di
+                      atas jumlah tertentu.
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="accordion" id="faqAccordion2">
-              <div className="accordion-item" data-aos="flip-up">
-                <h2 className="accordion-header" id="headingThree">
-                  <button
-                    className="accordion-button collapsed"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapseThree"
-                    aria-expanded="false"
-                    aria-controls="collapseThree"
-                  >
-                    Bagaimana cara merawat produk furniture?
-                  </button>
-                </h2>
-                <div
-                  id="collapseThree"
-                  className="accordion-collapse collapse"
-                  aria-labelledby="headingThree"
-                  data-bs-parent="#faqAccordion2"
-                >
-                  <div className="accordion-body">
-                    Untuk menjaga keindahan dan keawetan furniture, kami
-                    menyarankan untuk membersihkannya dengan kain lembut dan
-                    kering secara teratur dan menghindari penggunaan bahan kimia
-                    keras. Kami juga menyediakan panduan perawatan spesifik
-                    untuk setiap produk.
-                  </div>
-                </div>
-              </div>
-              <div className="accordion-item" data-aos="flip-up">
-                <h2 className="accordion-header" id="headingFour">
-                  <button
-                    className="accordion-button collapsed"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapseFour"
-                    aria-expanded="false"
-                    aria-controls="collapseFour"
-                  >
-                    Apakah Anda menawarkan layanan pengiriman?
-                  </button>
-                </h2>
-                <div
-                  id="collapseFour"
-                  className="accordion-collapse collapse"
-                  aria-labelledby="headingFour"
-                  data-bs-parent="#faqAccordion2"
-                >
-                  <div className="accordion-body">
-                    Ya, kami menawarkan layanan pengiriman ke seluruh Indonesia
-                    dengan biaya yang bervariasi tergantung lokasi. Kami juga
-                    menawarkan pengiriman gratis untuk pesanan di atas jumlah
-                    tertentu.
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+          </section>
+        </div>
       </div>
     </>
   );
