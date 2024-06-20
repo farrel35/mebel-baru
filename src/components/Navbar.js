@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
+import axios from "axios";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCartShopping,
@@ -19,6 +21,7 @@ const Navbar = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [allProducts, setAllProducts] = useState([]);
+  const [categories, setCategories] = useState([]);
 
   // Mengambil data produk dari API atau data lokal saat komponen dimount
   useEffect(() => {
@@ -52,7 +55,19 @@ const Navbar = () => {
       setSearchResults([]);
     }
   }, [searchQuery, allProducts]);
+  useEffect(() => {
+    // Fetch products
 
+    // Fetch categories
+    axios
+      .get("https://fakestoreapi.com/products/categories")
+      .then((response) => {
+        setCategories(response.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching the categories:", error);
+      });
+  }, []);
   // Fungsi untuk merender item keranjang belanja
   const renderItems = () => {
     // Jika tidak ada item dalam keranjang
@@ -141,27 +156,50 @@ const Navbar = () => {
             </div>
             <div className="offcanvas-body">
               <ul className="nav navbar-nav justify-content-center">
-                <li className="nav-item custom-submenu-item">
+                <li className="nav-item">
                   <HashLink to="/#hero" className="nav-link">
                     Tentang Kami
                   </HashLink>
                 </li>
-                <li className="nav-item custom-submenu-item">
+                <li className="nav-item dropdown">
+                  <a
+                    className="nav-link dropdown-toggle"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Kategori
+                  </a>
+                  <ul className="dropdown-menu">
+                    {categories.map((category, index) => (
+                      <li>
+                        <Link
+                          to={`/category/${category}`}
+                          className="dropdown-item"
+                        >
+                          {category}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+                <li className="nav-item">
                   <Link to="/all-products" className="nav-link">
                     Produk
                   </Link>
                 </li>
-                <li className="nav-item custom-submenu-item">
+                <li className="nav-item">
                   <HashLink to="/#faq" className="nav-link">
                     FAQS
                   </HashLink>
                 </li>
-                {/* <li className="nav-item custom-submenu-item">
+                {/* <li className="nav-item">
                   <Link to="/profile" className="nav-link">
                     Profile
                   </Link>
                 </li>
-                <li className="nav-item custom-submenu-item">
+                <li className="nav-item">
                   <Link to="/admin" className="nav-link">
                     admin
                   </Link>
@@ -213,7 +251,7 @@ const Navbar = () => {
                     aria-expanded="false"
                   >
                     <FontAwesomeIcon icon={faCartShopping} />
-                    <span class="position-absolute top-5 translate-middle badge bg-danger navbar-badge">
+                    <span className="position-absolute top-5 translate-middle badge bg-danger navbar-badge">
                       {cart.length}
                     </span>
                   </a>
