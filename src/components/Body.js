@@ -8,6 +8,7 @@ import {
   faHandshake,
   faMedal,
   faCircleCheck,
+  faCartPlus,
 } from "@fortawesome/free-solid-svg-icons";
 import "../css/Body.css";
 import heroImage from "../images/baru.png";
@@ -329,7 +330,7 @@ const Body = () => {
                             className="btn add-to-cart-btn"
                             onClick={() => handleAddToCart(product)}
                           >
-                            + Cart
+                            <FontAwesomeIcon icon={faCartPlus} />
                           </button>
                         </div>
                       </div>

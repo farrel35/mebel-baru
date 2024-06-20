@@ -47,11 +47,11 @@ const Footer = () => {
                     marginBottom: "15px",
                   }}
                 >
-                  Jl. Prof. Dr. Hamka, Tambakaji, Kecamatan Ngaliyan
+                  Toko furnitur terpercaya dengan pilihan
                   <br />
-                  Kota Semarang, Jawa Tengah
+                  lengkap untuk setiap ruang dalam
                   <br />
-                  Kode Pos 50185
+                  rumah Anda.
                 </p>
               </div>
 

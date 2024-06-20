@@ -371,14 +371,11 @@
   }
 
   .our-products-section .col-md-3 {
-    flex-basis: calc(
-      33.33% - 20px
-    ); /* Lebar kartu produk diatur agar ada ruang di antara mereka */
     margin-bottom: 20px;
   }
 
   .our-products-section .our-produk-card {
-    max-width: 100%; /* Kartu produk mengisi lebar maksimum */
+    max-width: 100%;
   }
 
   .card-footer {
@@ -392,7 +389,7 @@
     margin: 1.5rem 0;
   }
   .view-products-link {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
   }
 }
 .our-produk-card {
@@ -466,9 +463,9 @@
   background-color: #294b29;
   color: #fff;
   border: none;
-  padding: 8px 15px;
+  /* padding: 8px 15px; */
   border-radius: 5px;
-  font-size: 14px;
+  /* font-size: 14px; */
 }
 
 .add-to-cart-btn:hover {
