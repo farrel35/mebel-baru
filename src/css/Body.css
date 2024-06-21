@@ -342,24 +342,6 @@
   font-weight: 900; /* Ubah warna sesuai keinginan */
 }
 
-.faq-heading::before,
-.faq-heading::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  width: 30%;
-  height: 2px;
-  background-color: #dee2e6;
-}
-
-.faq-heading::before {
-  left: 0;
-}
-
-.faq-heading::after {
-  right: 0;
-}
-
 .faq-subheading {
   text-align: center;
   margin-bottom: 30px;
