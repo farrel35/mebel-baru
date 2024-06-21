@@ -96,7 +96,7 @@
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 3rem;
-  color: #85cc85; /* Warna teks untuk judul */
+  color: #437943; /* Warna teks untuk judul */
 }
 .why-choose-us-section .row {
   display: flex;
@@ -110,9 +110,9 @@
   border: none; /* Menghilangkan border */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan awal */
   border-radius: 8px; /* Sudut bulat */
-  margin: 0 10px; /* Margin antar kartu */
+  margin: 0 20px; /* Margin antar kartu */
   flex: 1; /* Kartu akan mengambil ruang yang sama dalam flexbox */
-  max-width: 300px; /* Lebar maksimum kartu */
+  /* max-width: 300px;  */
 }
 
 .why-choose-us-section .why-choose-us-card:hover {
@@ -143,15 +143,14 @@
 }
 
 .why-choose-us-section .why-choose-us-card .card-title {
-  font-size: 1.5rem; /* Ukuran font yang lebih besar untuk judul kartu */
-  font-weight: bold; /* Tebal untuk judul kartu */
-  margin-bottom: 1rem; /* Margin bawah yang lebih besar */
-  color: #222; /* Warna gelap untuk judul kartu */
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
 }
 
 .why-choose-us-section .why-choose-us-card .card-text {
-  font-size: medium; /* Ukuran font sedikit lebih besar untuk teks kartu */
-  color: #333; /* Warna untuk teks kartu */
+  font-size: 1rem;
+  color: #6c757d;
 }
 
 @media (max-width: 768px) {
@@ -163,17 +162,7 @@
     margin-bottom: 2rem; /* Margin bawah lebih besar */
   }
 }
-@media (max-width: 810px) {
-  .why-choose-us-section .row {
-    flex-direction: row; /* Tata letak vertikal untuk kartu pada layar tablet */
-    align-items: center; /* Pusatkan kartu pada layar tablet */
-  }
 
-  .why-choose-us-section .why-choose-us-card {
-    width: 100%;
-    margin-bottom: 2rem; /* Margin bawah lebih besar */
-  }
-}
 /* hero css */
 .hero {
   display: flex;
@@ -268,69 +257,7 @@
 }
 
 .hero-content h2 span {
-  color: #85cc85; /* Warna untuk kata "Kualitas" */
-}
-
-#section-banner {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px; /* Adjust the gap value to set the space between banners */
-}
-
-.mebel-banner {
-  padding: 10px 10px;
-  color: black;
-  border-radius: 10px; /* Ensure border-radius is applied to .mebel-banner */
-  overflow: hidden; /* Ensure content within respects the border-radius */
-  margin: 40px 0; /* Add vertical margin to create space between banners */
-}
-
-.mebel-banner-1 {
-  background: url("../images/design2.png") no-repeat;
-  background-size: cover; /* Make sure the image covers the element */
-  background-position: center; /* Center the background image */
-  border-radius: 10px;
-  margin-right: 20px;
-}
-
-.mebel-banner-2 {
-  background: url("../images/design1.png") no-repeat;
-  background-size: cover; /* Make sure the image covers the element */
-  background-position: center; /* Center the background image */
-  border-radius: 10px;
-}
-
-.mebel-banner .title {
-  font-weight: bold;
-  margin-bottom: 1rem;
-}
-
-.mebel-banner .discount-text {
-  margin-bottom: 4rem;
-}
-
-.mebel-banner .discount-text .discount {
-  font-weight: bold;
-}
-
-.mebel-banner .shop-now-btn {
-  background-color: dark;
-  color: white;
-}
-
-.shop-now-btn {
-  background-color: #697d74;
-  color: white;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 5px;
-  display: inline-block;
-  transition: background-color 0.3s;
-}
-
-.shop-now-btn:hover {
-  background-color: #294b29;
-  color: white;
+  color: #294b29; /* Warna untuk kata "Kualitas" */
 }
 
 /* OurProducts.css */
@@ -340,7 +267,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 3rem 0;
+  margin: 3rem 0 3rem 0;
 }
 
 .our-products-header h1 {
@@ -354,258 +281,23 @@
   font-size: 1rem;
 }
 
+@media (max-width: 576px) {
+  .view-products-link {
+    font-size: 0.7rem;
+  }
+}
 .view-products-link:hover {
   text-decoration: underline;
 }
 
-@media (max-width: 576px) {
-  .view-products-link {
-    font-size: 0.7rem;
-  }
-}
-@media (max-width: 810px) {
-  /* Mengatur agar kartu produk menampilkan 3 barang per baris */
-  .our-products-section .row {
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
-
-  .our-products-section .col-md-3 {
-    margin-bottom: 20px;
-  }
-
-  .our-products-section .our-produk-card {
-    max-width: 100%;
-  }
-
-  .card-footer {
-    gap: 15px;
-  }
-}
-
-/* Media Query untuk handphone */
-@media (max-width: 576px) {
-  .our-products-header {
-    margin: 1.5rem 0;
-  }
-  .view-products-link {
-    font-size: 0.7rem;
-  }
-}
-.our-produk-card {
-  border-radius: 8px;
-  overflow: hidden;
-  background-color: #ffffff;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid #ddd;
-  padding: 20px;
-}
-
-.our-produk-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.card-img-top {
+/* Gaya untuk gambar di dalam kartu produk */
+.our-products-section .card-product .card-img-top {
   width: 100%;
   height: 150px;
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
   margin: auto;
-}
-
-.card-body-product {
-  text-align: center;
-  padding: 1rem;
-  flex-grow: 1;
-}
-
-.card-link {
-  text-decoration: none;
-  color: black;
-}
-
-.card-title {
-  font-size: 1.25rem;
-  margin-bottom: 0.5rem;
-}
-
-.card-category-product {
-  font-size: 0.9rem;
-  color: #6b6b6b;
-  margin-top: auto;
-}
-
-.card-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px;
-}
-
-.card-price {
-  font-size: 16px;
-  font-weight: bold;
-  color: #333;
-}
-
-.card-actions {
-  display: flex;
-  align-items: center;
-}
-
-.add-to-cart-btn {
-  background-color: #294b29;
-  color: #fff;
-  border: none;
-  /* padding: 8px 15px; */
-  border-radius: 5px;
-  /* font-size: 14px; */
-}
-
-.add-to-cart-btn:hover {
-  background-color: #697d74;
-  color: white;
-}
-
-/* sale */
-#sale {
-  background-image: url(../images/sale.png);
-  background-size: cover;
-  background-position: center;
-  object-fit: cover;
-  max-width: 100%;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  text-align: center;
-  padding: 20px;
-}
-
-@media (max-width: 768px) {
-  #sale {
-    height: 40vh;
-    padding: 10px;
-    background-attachment: scroll;
-  }
-}
-
-@media (max-width: 480px) {
-  #sale {
-    height: 25vh;
-    background-attachment: scroll;
-  }
-}
-
-#popular-products .carousel-item {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
-
-#popular-products .card-transition {
-  min-width: 250px;
-  flex: 1;
-}
-
-#popular-products .card-transition:hover {
-  transform: scale(1.05);
-  transition: transform 0.2s;
-}
-
-.products-container {
-  position: relative;
-  overflow: hidden;
-  padding: 2rem 0;
-}
-
-.products-wrapper {
-  display: flex;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  gap: 2rem;
-}
-
-.product {
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  overflow: hidden;
-  min-width: 300px;
-  flex: 0 0 auto;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
-}
-
-.product img {
-  width: 100%;
-  height: 200px; /* Tetapkan tinggi tetap */
-  object-fit: cover; /* Memastikan gambar tidak terpotong dan tetap proporsional */
-}
-
-.product-info {
-  padding: 1rem;
-}
-
-.product-name {
-  font-size: 1.25rem;
-  margin: 0 0 0.5rem;
-}
-
-.product-price {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.discounted-price {
-  color: #e74c3c;
-  font-weight: bold;
-}
-
-.original-price {
-  text-decoration: line-through;
-  color: #aaa;
-}
-
-.discount-percentage {
-  background: #e74c3c;
-  color: #fff;
-  padding: 0.25rem 0.5rem;
-  border-radius: 5px;
-}
-
-.navigation-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
-  border: none;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  font-size: 1.5rem;
-  z-index: 10;
-  transition: background 0.3s;
-}
-
-.navigation-button:hover {
-  background: rgba(0, 0, 0, 0.8);
-}
-
-.navigation-button.left {
-  left: 0;
-}
-
-.navigation-button.right {
-  right: 0;
 }
 .scrollUp {
   position: fixed;
@@ -646,8 +338,26 @@
 }
 
 .faq-heading span.highlight-text {
-  color: #85cc85;
+  color: #417541;
   font-weight: 900; /* Ubah warna sesuai keinginan */
+}
+
+.faq-heading::before,
+.faq-heading::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 30%;
+  height: 2px;
+  background-color: #dee2e6;
+}
+
+.faq-heading::before {
+  left: 0;
+}
+
+.faq-heading::after {
+  right: 0;
 }
 
 .faq-subheading {
@@ -729,4 +439,40 @@
 .container-faq {
   max-width: 95%;
   margin-top: 50px;
+}
+
+.card-product {
+  transition: 0.2s;
+  -moz-transition: 0.2s;
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
+}
+
+.card-product:hover {
+  border: 1px solid #294b29;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.12);
+  transition: 0.2s;
+  -moz-transition: 0.2s;
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
+}
+
+.card-title {
+  height: 40px; /* Adjust this height as needed */
+  overflow: hidden;
+  word-wrap: break-word; /* Allow long words to break and wrap */
+}
+
+.add-to-cart-btn {
+  background-color: #294b29;
+  color: #fff;
+
+  /* padding: 8px 15px; */
+  border-radius: 5px;
+  /* font-size: 14px; */
+}
+
+.add-to-cart-btn:hover {
+  background-color: #697d74;
+  color: white;
 }

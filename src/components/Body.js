@@ -12,6 +12,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import "../css/Body.css";
 import heroImage from "../images/baru.png";
+import banner1 from "../images/design1.png";
+import banner2 from "../images/design2.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useCart } from "../components/CartContext";
@@ -20,13 +22,12 @@ const Body = () => {
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [currentPage] = useState(1);
-  const productsPerPage = 8;
-
+  const productsPerPage = 10;
   const { addToCart } = useCart();
+
   const handleAddToCart = (product) => {
     addToCart(product);
   };
-
   useEffect(() => {
     // Fetch products
     axios
@@ -64,92 +65,78 @@ const Body = () => {
   return (
     <>
       <div>
-        <div className="container container-home">
+        <div className="container">
           {/* Bagian Why Choose Us */}
           <section id="why-choose-us" className="why-choose-us-section">
-            <div className="container">
-              <div className="row">
-                <h2>
-                  Our <span>Service</span>
-                </h2>
-                <div className="col-md-3" data-aos="fade-up">
-                  <div className="card why-choose-us-card card-transition">
-                    <div className="icon-wrapper mt-3">
-                      <FontAwesomeIcon
-                        icon={faMedal}
-                        size="2x"
-                        className="icon"
-                      />
-                    </div>
-                    <div className="card-body">
-                      <h5 className="card-title">Kualitas</h5>
-                      <p className="card-text">
-                        Kami menyediakan produk berkualitas tinggi.
-                      </p>
-                    </div>
+            <div className="row">
+              <h2>
+                Our <span>Service</span>
+              </h2>
+              <div className="col-md-3" data-aos="fade-up">
+                <div className="card why-choose-us-card card-transition">
+                  <div className="icon-wrapper mt-3">
+                    <FontAwesomeIcon
+                      icon={faMedal}
+                      size="2x"
+                      className="icon"
+                    />
+                  </div>
+                  <div className="card-body">
+                    <h5 className="card-title">Kualitas</h5>
+                    <p className="card-text">
+                      Kami menyediakan produk berkualitas tinggi.
+                    </p>
                   </div>
                 </div>
-                <div
-                  className="col-md-3"
-                  data-aos="fade-up"
-                  data-aos-delay="50"
-                >
-                  <div className="card why-choose-us-card card-transition">
-                    <div className="icon-wrapper mt-3">
-                      <FontAwesomeIcon
-                        icon={faHandshake}
-                        size="2x"
-                        className="icon"
-                      />
-                    </div>
-                    <div className="card-body">
-                      <h5 className="card-title">Pelayanan</h5>
-                      <p className="card-text">
-                        Memberikan layanan pelanggan yang terbaik.
-                      </p>
-                    </div>
+              </div>
+              <div className="col-md-3" data-aos="fade-up" data-aos-delay="100">
+                <div className="card why-choose-us-card card-transition">
+                  <div className="icon-wrapper mt-3">
+                    <FontAwesomeIcon
+                      icon={faHandshake}
+                      size="2x"
+                      className="icon"
+                    />
+                  </div>
+                  <div className="card-body">
+                    <h5 className="card-title">Pelayanan</h5>
+                    <p className="card-text">
+                      Memberikan layanan pelanggan yang terbaik.
+                    </p>
                   </div>
                 </div>
-                <div
-                  className="col-md-3"
-                  data-aos="fade-up"
-                  data-aos-delay="100"
-                >
-                  <div className="card why-choose-us-card card-transition">
-                    <div className="icon-wrapper mt-3">
-                      <FontAwesomeIcon
-                        icon={faThumbsUp}
-                        size="2x"
-                        className="icon"
-                      />
-                    </div>
-                    <div className="card-body">
-                      <h5 className="card-title">Variasi</h5>
-                      <p className="card-text">
-                        Berbagai pilihan yang sesuai dengan kebutuhan Anda.
-                      </p>
-                    </div>
+              </div>
+              <div className="col-md-3" data-aos="fade-up" data-aos-delay="200">
+                <div className="card why-choose-us-card card-transition">
+                  <div className="icon-wrapper mt-3">
+                    <FontAwesomeIcon
+                      icon={faThumbsUp}
+                      size="2x"
+                      className="icon"
+                    />
+                  </div>
+                  <div className="card-body">
+                    <h5 className="card-title">Variasi</h5>
+                    <p className="card-text">
+                      Berbagai pilihan yang sesuai dengan kebutuhan Anda.
+                    </p>
                   </div>
                 </div>
-                <div
-                  className="col-md-3"
-                  data-aos="fade-up"
-                  data-aos-delay="150"
-                >
-                  <div className="card why-choose-us-card card-transition">
-                    <div className="icon-wrapper mt-3">
-                      <FontAwesomeIcon
-                        icon={faSackDollar}
-                        size="2x"
-                        className="icon"
-                      />
-                    </div>
-                    <div className="card-body">
-                      <h5 className="card-title">Harga Terjangkau</h5>
-                      <p className="card-text">
-                        Dapatkan produk hebat dengan harga terjangkau.
-                      </p>
-                    </div>
+              </div>
+              <div className="col-md-3" data-aos="fade-up" data-aos-delay="300">
+                <div className="card why-choose-us-card card-transition">
+                  <div className="icon-wrapper mt-3">
+                    <FontAwesomeIcon
+                      icon={faSackDollar}
+                      size="2x"
+                      className="icon"
+                    />
+                  </div>
+                  <div className="card-body">
+                    <h5 className="card-title">Harga Terjangkau</h5>
+                    <p className="card-text">
+                      Dapatkan produk hebat dengan harga terjangkau.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -199,133 +186,137 @@ const Body = () => {
             </Link>
           </div>
         </section>
-        <div className="container container-home">
-          {/* <section id="about-us" className="about-us-section mt-5">
-            <h1 className="h1-center"> Tentang Kami</h1>
-            <div className="row featurette">
-              <div className="col-md-7">
-                <h2 className="featurette-heading lh-1">Mebelin Furniture</h2>
-                <p className="lead">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Dolorum, ut. Itaque quod vel incidunt, porro quo voluptate
-                  hic, iusto voluptates fugit quis maiores adipisci dolorum quos
-                  maxime dolorem sed nemo commodi modi in animi qui deserunt.
-                  Nemo laboriosam molestias temporibus placeat harum suscipit
-                  ipsum dolorum, eum libero quia facilis quae architecto
-                  voluptatibus reprehenderit officia reiciendis. Nemo enim omnis
-                  placeat recusandae qui magni commodi, rem debitis hic totam
-                  tempora soluta, quis eos vero voluptatem, velit tenetur
-                  consequatur? Tempora accusantium nesciunt id asperiores fuga
-                  distinctio aut! Laborum culpa voluptatum alias aliquam
-                  voluptates consequatur recusandae officiis dolore accusantium
-                  in? Nostrum ullam eaque ex.
-                  <br />
-                </p>
-              </div>
-              <div className="col-md-5">
-                <img
-                  src="https://m.media-amazon.com/images/I/81UwP++piNL._AC_SL1500_.jpg"
-                  alt="about-us"
-                  width="450"
-                  height="450"
-                />
-              </div>
-            </div>
-          </section> */}
-          <section id="section-banner">
-            <div className="container">
-              <div className="row">
-                <div className="col-12 col-md-6 mb-3 mb-lg-0">
-                  <div className="mebel-banner mebel-banner-1">
-                    <h3 className="title">Fruits & Vegetables</h3>
-                    <p className="discount-text">
-                      Get Up to
-                      <span className="discount"> 30% </span>
+        <div className="container">
+          <section id="banner">
+            <div className="row mt-5 mb-5">
+              <div className="col-12 col-md-6 mb-3 mb-lg-0">
+                <div
+                  className="py-5 px-3 rounded"
+                  style={{
+                    background: `url(${banner1}) no-repeat`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                  }}
+                >
+                  <div>
+                    <h3 className="fw-bold mb-1">Sofa</h3>
+                    <p className="mb-4">
+                      Get Upto
+                      <span className="fw-bold">30%</span>
                       Off
                     </p>
-                    <Link to="/all-products/" className="btn shop-now-btn">
+                    <a href="#!" className="btn btn-dark">
                       Shop Now
-                    </Link>
+                    </a>
                   </div>
                 </div>
-                <div className="col-12 col-md-6">
-                  <div className="mebel-banner mebel-banner-2">
-                    <h3 className="title">Freshly Baked Buns</h3>
-                    <p className="discount-text">
-                      Get Up to
-                      <span className="discount"> 25% </span>
+              </div>
+              <div className="col-12 col-md-6 mb-3 mb-lg-0">
+                <div
+                  className="py-5 px-3 rounded"
+                  style={{
+                    background: `url(${banner2}) no-repeat`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                  }}
+                >
+                  <div>
+                    <h3 className="fw-bold mb-1">Meja &amp; Kursi</h3>
+                    <p className="mb-4">
+                      Get Upto
+                      <span className="fw-bold">30%</span>
                       Off
                     </p>
-                    <Link to="/all-products/" className="btn shop-now-btn">
+                    <a href="#!" className="btn btn-dark">
                       Shop Now
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </div>
             </div>
           </section>
-
           {/* Bagian Kategori */}
           <section id="category">
-            <div className="container">
-              {/* <hr /> */}
-              <h1 className="h1-center">Kategori</h1>
-              <div className="row">
-                {categories.map((category, index) => (
-                  <div className="col-md-3" key={index}>
-                    <div className="card card-transition">
-                      <Link to={`/category/${category}`}>
-                        <img
-                          src={`https://fakestoreapi.com/img/category${
-                            index + 1
-                          }.jpg`} // Placeholder for category image
-                          className="card-img-top"
-                          alt={category}
-                        />
-                      </Link>
-                      <div className="card-body">
-                        <h5 className="card-title">{category}</h5>
-                        <p className="card-text">Description of {category}.</p>
-                      </div>
+            {/* <hr /> */}
+            <h1 className="h1-center">Kategori</h1>
+            <div className="row">
+              {categories.map((category, index) => (
+                <div className="col-md-3" key={index}>
+                  <div className="card card-transition">
+                    <Link to={`/category/${category}`}>
+                      <img
+                        src={`https://fakestoreapi.com/img/category${
+                          index + 1
+                        }.jpg`} // Placeholder for category image
+                        className="card-img-top"
+                        alt={category}
+                      />
+                    </Link>
+                    <div className="card-body">
+                      <h5 className="card-title">{category}</h5>
+                      <p className="card-text">Description of {category}.</p>
                     </div>
                   </div>
-                ))}
-              </div>
-              {/* <hr /> */}
+                </div>
+              ))}
             </div>
+            {/* <hr /> */}
           </section>
 
           {/* Bagian Our Products */}
           <section id="our-products" className="our-products-section">
-            <div className="container">
-              <div className="our-products-header">
-                <h1 className="h1-product">Produk Kami</h1>
-                <Link to="/all-products" className="view-products-link">
-                  Lihat Semua Produk →
-                </Link>
-              </div>
-              <div className="row">
-                {currentProducts.map((product) => (
-                  <div className="col-md-3 mb-5" key={product.id}>
-                    <div className="card our-produk-card">
-                      <Link to={`/product/${product.id}`} className="card-link">
-                        <img
-                          src={product.image}
-                          className="card-img-top"
-                          alt={product.title}
-                        />
-                        <div className="card-body-product">
-                          <p className="card-category-product">
-                            {product.category}
-                          </p>
-                          <h5 className="card-title">{product.title}</h5>
+            <div className="our-products-header">
+              <h1 className="h1-product">Produk Kami</h1>
+
+              <Link to="/all-products" className="view-products-link">
+                Lihat Semua Produk →
+              </Link>
+            </div>
+            <div className="row g-4 row-cols-1 row-cols-md-3 row-cols-lg-5">
+              {currentProducts.map((product) => (
+                <div className="col" key={product.id}>
+                  <div className="card card-product">
+                    <div className="card-body">
+                      <div className="text-center position-relative">
+                        <Link to={`/product/${product.id}`}>
+                          <img
+                            src={product.image}
+                            alt="Grocery Ecommerce Template"
+                            className="mb-3 img-fluid card-img-top"
+                          />
+                        </Link>
+                      </div>
+                      <div className="text-small mb-1">
+                        <Link
+                          to={`/category/${product.category}`}
+                          className="text-inherit text-decoration-none text-dark"
+                        >
+                          <small>{product.category}</small>
+                        </Link>
+                      </div>
+                      <h5 className="card-title fs-6">
+                        <Link
+                          to={`/product/${product.id}`}
+                          className="text-inherit text-decoration-none text-dark"
+                        >
+                          {product.title}
+                        </Link>
+                      </h5>
+                      <div>
+                        <small className="text-warning">
+                          <i className="fa-solid fa-star" />
+                          <i className="fa-solid fa-star" />
+                          <i className="fa-solid fa-starl" />
+                          <i className="fa-solid fa-star" />
+                          <i className="fa-solid fa-star-half" />
+                        </small>
+                        <span className="text-muted small">4.5(149)</span>
+                      </div>
+                      <div className="d-flex justify-content-between align-items-center mt-3">
+                        <div>
+                          <span className="text-dark">${product.price}</span>
                         </div>
-                      </Link>
-                      <div className="card-footer">
-                        <div className="card-price">
-                          <strong>${product.price}</strong>
-                        </div>
-                        <div className="card-actions">
+                        <div>
                           <button
                             className="btn add-to-cart-btn"
                             onClick={() => handleAddToCart(product)}
@@ -336,14 +327,11 @@ const Body = () => {
                       </div>
                     </div>
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
           </section>
         </div>
-
-        {/* Sale */}
-        {/* <section id="sale" className="container-fluid"></section> */}
 
         {/* Bagian FAQ */}
         <div className="container">

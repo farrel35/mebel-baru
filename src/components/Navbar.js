@@ -173,7 +173,7 @@ const Navbar = () => {
                   </a>
                   <ul className="dropdown-menu">
                     {categories.map((category, index) => (
-                      <li>
+                      <li key={index}>
                         <Link
                           to={`/category/${category}`}
                           className="dropdown-item"
@@ -262,21 +262,16 @@ const Navbar = () => {
                     {renderItems()}
                   </ul>
                 </li>
-                <li className="nav-item dropdown">
-                  <Link to="/login">
-                    <button className="btn btn-success btn-login">Login</button>
-                    {/*<img
-                      src={image3}
-                      alt=""
-                      className="brand-image img-circle elevation-3"
-                      style={{
-                        opacity: 0.8,
-                        width: "35px",
-                        height: "35px",
-                        objectFit: "cover",
-                      }}
-                    />*/}
+                <li className="nav-item">
+                  <Link to="/login" className="btn btn-outline-light ms-2 px-4">
+                    Login
                   </Link>
+                  {/* <Link
+                    to="/register"
+                    className="btn btn-info btn-light ms-2 px-4 btn"
+                  >
+                    Daftar
+                  </Link> */}
                 </li>
               </ul>
             </div>
