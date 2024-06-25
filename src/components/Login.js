@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
 import "../css/Login.css";
+import axios from "axios";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleEmailChange = (e) => setEmail(e.target.value);
   const handlePasswordChange = (e) => setPassword(e.target.value);
@@ -17,9 +19,20 @@ const Login = () => {
       setError("Both email and password are required.");
     } else {
       setError("");
-      // Proceed with form submission
-      // For example, you could send a request to the server here
-      console.log("Form submitted with:", { email, password });
+      setLoading(true);
+      console.log("Sending login request with:", { email, password });
+      axios
+        .post("https://szdn6rxb-4000.asse.devtunnels.ms/users/login", { email, password })
+        .then((response) => {
+          setLoading(false);
+          console.log("Login successful:", response.data);
+          // Handle successful login, e.g., save token, redirect user, etc.
+        })
+        .catch((error) => {
+          setLoading(false);
+          setError("Login failed. Please check your credentials and try again.");
+          console.error("Error logging in:", error);
+        });
     }
   };
 
@@ -39,37 +52,21 @@ const Login = () => {
                 <form onSubmit={handleSubmit}>
                   <div className="input-group">
                     <div className="form-floating mb-3">
-                      <input
-                        type="email"
-                        className="form-control"
-                        id="floatingInput"
-                        placeholder="name@example.com"
-                        value={email}
-                        onChange={handleEmailChange}
-                      />
+                      <input type="email" className="form-control" id="floatingInput" placeholder="name@example.com" value={email} onChange={handleEmailChange} />
                       <label htmlFor="floatingInput">Email address</label>
                     </div>
                   </div>
-
                   <div className="form-floating mb-3">
-                    <input
-                      type="password"
-                      className="form-control"
-                      id="floatingPassword"
-                      placeholder="Password"
-                      value={password}
-                      onChange={handlePasswordChange}
-                    />
+                    <input type="password" className="form-control" id="floatingPassword" placeholder="Password" value={password} onChange={handlePasswordChange} />
                     <label htmlFor="floatingPassword">Password</label>
                   </div>
-
                   <div className="text-start my-3">
                     <Link to="/register" className="text-success a-none">
                       Don't have an account? Register
                     </Link>
                   </div>
-                  <button className="btn btn-success w-100 py-2" type="submit">
-                    Login
+                  <button className="btn btn-success w-100 py-2" type="submit" disabled={loading}>
+                    {loading ? "Logging in..." : "Login"}
                   </button>
                 </form>
               </div>
